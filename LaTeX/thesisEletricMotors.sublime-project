@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+		},
+	],
+	"spell_check": true,
+	"dictionary": "Packages/Language - English/en_US.dic"
+}

@@ -1,0 +1,128 @@
+%!TEX root = /Users/tds/thesisLatek/template.tex
+%Developed using Sublime Text 3 with LaTexTools plugin
+%Don't forget to use SUPER+R to jump between top level commands!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter2.tex
+%% UNL thesis document file
+%%
+%% Chapter with the template manual
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Related Work}
+\label{cha:users_manual}
+
+% ================
+% = Introduction =
+% ================
+\section{Relevance of Three Phase Electric Motors and target motor type} % (fold)
+\label{sec:introduction}
+
+{\LARGE \textbf{~\\These instructions are outdated! Please see also the “template.tex” file!\\}}
+
+This chapter describes how to use the \LaTeX\ \unlthesis\ template (and the “\unlthesisclass” class file).
+
+Let's start with some simple suggestions:
+
+\begin{enumerate}
+  \item No! You don't have to use this template to write your thesis.  You don't even have to use \LaTeX.  However, writing a thesis is serious stuff, and which tool you shall use to write it is not a decision to make lighthearted.
+  \item \LaTeX\ is hard enough by itself.  This template aims at making your life easier, but not easy. If you choose to use this template to write your thesis, you are very welcome.  However, don't expect me to provide you help with \LaTeX.  Look for help with your friends (you have some friends, don't you?), or search the web, or try even to read some book(s) on \LaTeX. In the end you will certainly find the experience rewarding.
+  \item So, don't forget, when you come to the point of “\emph{How do I do this with \LaTeX?}” look for help!  Google is your best friend. 
+  \item If you believe the difficulty is related with the \unlthesis\ template itself (and not with \LaTeX), please \textbf{do not} send me an email asking for help.  Please look for help in the \unlthesis\ Google Group (URL) and the \unlthesis\ Facebook group (URL).  If you can't find help there from previous posts/messages, then post your own question. Hopefully someone will answer you.
+\end{enumerate}
+
+Now, let's go to a major issue for Windows users.  Characters have to be encoded in files as numbers, and that is how character encodings were born. ASCII and EBCDIC standards are long lost in the past.  The world now uses UTF-8.  Well, not all the world… Windows is still stick in its \emph{codepages}, and “latin1” is what windows uses as the codepage for Western Europe. This messes up with the template. Please be sure you use an editor with UTF-8 support.  \emph{Go to the preferences/options/… of your text editor and set up its default file encoding as UTF-8.}
+
+
+The \unlthesis\ template is organized into files and folders. At the main level it includes the following files and folders:
+
+\noindent
+\begin{tabularx}{\linewidth}{>{\ttfamily}l>{\itshape}l>{\upshape}X}
+unlthesis.cls     & file    & 
+The main class file. It will include additional files from \texttt{unlthesis-files} folder. 
+\\ 
+template.tex      & file    & 
+The main user file. Use this file as the main file for your thesis. 
+\\
+bibliography.bib  & file    & 
+An example of a bibliography file. You may have has many as you want. \\
+template.pdf      & file    & 
+A possible result of applying pdf\LaTeX\ to the \texttt{template.tex} file. The template supports multiple types of documents (e.g., MSc dissertation, PhD thesis, …) and multiple Schools (e.g., FCT-UNL, FCSH-UNL, IST-UL, …) and each will produce different results.
+\\
+Chapters          & folder  & Examples of thesis chapters. Replace them with your own chapters. 
+\\
+Examples          & folder  & Some more examples of the use of the template for different document types and Schools. 
+\\
+Scripts           & folder  & Some (possibly useful) scripts for Unix-based systems (Linux, Mac OSx). If you are a windows user, ignore this folder (you may safely delete it if you want). 
+\\
+unlthesis-files   & folder  & 
+Additional files for the \unlthesisclass\ file.  Unless you know what you are doing, avoid messing up with the files and folders inside this folder (except for deleting the unused Schools, see below). 
+\\
+\end{tabularx}
+
+The \texttt{unlthesis-files} folder contains additional files and folders that complement the main \unlthesisclass\ file.  These are:
+
+\noindent
+\begin{tabularx}{\linewidth}{>{\ttfamily}l>{\itshape}l>{\upshape}X}
+README.txt      & file    &
+A file that should be read!  :) 
+\\
+fix-babel.clo   & file    &
+Simple fixes to the \texttt{babel} package.
+\\
+lang-text.clo   & file    &
+Translations of important strings used in the template.  Currently fully supported are Portuguese and English, but French is on the way.  If you add translations for your own language, please be so kind and send them to me. Thank you!
+\\
+options.clo     & file    &
+Processing of \unlthesisclass\ options.  \emph{Don't mess with this!}
+\\
+packages.clo    & file    &
+Additional packages to be loaded into the \unlthesis\ template. \emph{You should not mess with this!}
+\\
+spine.clo       & file    &
+This file is loaded only if the option \texttt{spine=true}, and includes the typesetting of the book spine.
+\\
+ChapStyles      & folder  &
+Contains a lot of files, one for each chapter style.  If you really know what you are doing, you may add your own chapter style here.
+\\
+FontStyles      & folder  &
+Contains a few files, one for each set of fonts (main text font, chapter font, section font, subsection font, etc).  If you really know what you are doing, you may add your own set here.
+\\
+Schools         & folder  &
+Configuration files for each school.  This folder is organized into subfolders, one for each university.  \emph{You may safely delete all the subfolders except the one for your University.}  Then open the subfolder of your University and \emph{you may safely delete all the subfolders except the one for your School/Faculty}.
+\\
+\end{tabularx}
+
+As stated above, the \texttt{Schools} folder contains per-university folders and per-school (faculty) subfolders.  Currently these are the available folders:
+
+\noindent
+\begin{tabularx}{\linewidth}{>{\ttfamily}r@{~/~}>{\ttfamily}l>{\itshape}l>{\upshape}X}
+ul     & ist    & folder  & 
+The folder for the \href{http://www.tecnico.ulisboa.pt}{\emph{Instituto Superior Técnico}} of the \emph{University of Lisbon}.
+\\
+unl    & fcsh   & folder  & 
+The folder for the \href{http:www.fcsh.unl.pt}{\emph{Faculty of Human and Social Sciences}}  of the \emph{NOVA University of Lisbon}.
+\\
+unl    & fct    & folder  & 
+The folder for the \href{http:www.fct.unl.pt}{\emph{Faculty of Sciences and Technology}} of the \emph{NOVA University of Lisbon}.
+\\
+unl    & ims    & folder  & 
+The folder for the \href{http:www.ims.unl.pt}{\emph{Information and Management School}} of the \emph{NOVA University of Lisbon}.
+\\
+\end{tabularx}
+
+% section folder_structure (end)
+
+% ===================
+% = Package options =
+% ===================
+
+\section{Three Phase Induction Motors' Maintenance and Life-cycle} % (fold)
+\label{sec:Three_phase_induction_motors_maintenance}
+
+\section{Predictive Maintenance by Electrical Signature Analysis to Induction Motors} % (fold)
+\label{sec:predictive_maintenance_by_eletrical_signature_analysis}
+
+\section{VueForge} % (fold)
+\label{sec:predictive_maintenance_by_eletrical_signature_analysis}
+
+\section{Summary} % (fold)
+\label{sec:related_work_summary}

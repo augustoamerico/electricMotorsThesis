@@ -1,0 +1,1052 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Exe",
+				"execInUnity"
+			],
+			[
+				"idPla",
+				"idPlayerNextTurn"
+			],
+			[
+				"idUti",
+				"idUtilizadorInsercao"
+			],
+			[
+				"sel",
+				"selectedItems"
+			],
+			[
+				"idRespo",
+				"idUtilizadorResponsavel"
+			],
+			[
+				"url",
+				"urlencodedParser"
+			],
+			[
+				"save",
+				"saveUtilizador"
+			],
+			[
+				"str",
+				"stringify"
+			],
+			[
+				"get",
+				"getUtilizadores"
+			],
+			[
+				"jw",
+				"jwt_secret"
+			],
+			[
+				"db",
+				"dbmodule"
+			],
+			[
+				"urle",
+				"urlencodedParser"
+			],
+			[
+				"json",
+				"jsonParser"
+			],
+			[
+				"editU",
+				"editUtilizadorModal"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"inner",
+				"innerWidth"
+			],
+			[
+				"close",
+				"closeSymbol"
+			],
+			[
+				"offset",
+				"offsetHand"
+			],
+			[
+				"my",
+				"myCanvas"
+			],
+			[
+				"fetch",
+				"fetchCardTimeAnimation"
+			],
+			[
+				"fetc",
+				"fetchCardTimeAnimation"
+			],
+			[
+				"fet",
+				"fetchCardTimeAnimation"
+			],
+			[
+				"tick",
+				"ticktack"
+			],
+			[
+				"removeFilter",
+				"removeElementInFilters"
+			],
+			[
+				"levels",
+				"levelsDisplayName"
+			],
+			[
+				"change",
+				"changeElementInSelectors"
+			],
+			[
+				"select",
+				"selectorsObserver"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"displa",
+				"displayName"
+			],
+			[
+				"query",
+				"querySelectors"
+			],
+			[
+				"level",
+				"levelsDisplayName"
+			],
+			[
+				"drag",
+				"dragItem"
+			],
+			[
+				"meta",
+				"metadataDir"
+			],
+			[
+				"hie",
+				"hierarchy"
+			],
+			[
+				"hierar",
+				"hierarchies"
+			],
+			[
+				"g",
+				"groupAttr"
+			],
+			[
+				"fore",
+				"foreign_key"
+			],
+			[
+				"foreign",
+				"foreign_keys"
+			],
+			[
+				"pro",
+				"Printer.prototype"
+			],
+			[
+				"pr",
+				"Printer.prototype"
+			],
+			[
+				"prot",
+				"a.prototype"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"sq",
+				"seqno"
+			],
+			[
+				"last",
+				"last_myvs"
+			],
+			[
+				"invo",
+				"invoke_mutex"
+			],
+			[
+				"thread",
+				"threadNumber"
+			],
+			[
+				"mu",
+				"bucketMutexs"
+			],
+			[
+				"ref",
+				"associatedLockedReference"
+			],
+			[
+				"Lock",
+				"Lockable"
+			],
+			[
+				"count",
+				"countElements"
+			],
+			[
+				"pthread",
+				"pthread_mutex_lock"
+			],
+			[
+				"a",
+				"attribute"
+			],
+			[
+				"com",
+				"complexType"
+			],
+			[
+				"dir",
+				"direntries"
+			],
+			[
+				"lock",
+				"lock_protocol"
+			],
+			[
+				"pthre",
+				"pthread_create"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 203.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"matla",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"latex",
+				"LaTeXing: Open"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"scss",
+				"Set Syntax: CSS"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"repl",
+				"SublimeREPL: Node"
+			],
+			[
+				"C#",
+				"Set Syntax: C#"
+			],
+			[
+				"types",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"scala",
+				"Set Syntax: Scala"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"node",
+				"SublimeREPL: Node"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"REPL",
+				"SublimeREPL: Node"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"repl:n",
+				"SublimeREPL: Node"
+			],
+			[
+				"matlab",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"octave",
+				"SublimeREPL: Octave"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pevi",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"c",
+				"Set Syntax: C++"
+			],
+			[
+				"clojure",
+				"SublimeREPL: Clojure"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"play",
+				"Set Syntax: Play Scala Template (HTML)"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"repl:sca",
+				"SublimeREPL: Scala"
+			],
+			[
+				"ensime",
+				"Set Syntax: Ensime Session"
+			],
+			[
+				"script",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sublimerepl: node",
+				"SublimeREPL: Node"
+			]
+		],
+		"width": 538.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib2,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation')",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/tds/Mestrado/Tese/unlthesis/LaTeX"
+	],
+	"file_history":
+	[
+		"/Users/tds/Mestrado/Tese/Related_Work/READ_ME.md",
+		"/Users/tds/Professional/CV/OnePageResume/index.html",
+		"/Users/tds/Mestrado/2Sem/Bolsa/ICE/TP1/P1/42567-46071/script_1.m",
+		"/Users/tds/certificates/tdsmacos.ovpn",
+		"/Users/tds/certificates/aalopesWindows.ovpn",
+		"/Users/tds/Projects/focus-tracker/README.md",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/TemplateData/UnityProgress.js",
+		"/Users/tds/.beaker/v1/config/beaker.pref.json",
+		"/Users/tds/Professional/BookKeping/bookkeeping/docker-compose.yml",
+		"/Users/tds/Professional/BookKeping/bookkeeping/app/server/app.js",
+		"/Users/tds/blog/prod.sh",
+		"/Users/tds/blog/ghost/content/content/themes/uno-zen/assets/css/uno-zen.css",
+		"/Users/tds/blog/ghost/content/content/themes/uno-zen/assets/scss/components/_pagination.scss",
+		"/Users/tds/blog/ghost/content/content/themes/uno-zen/index.hbs",
+		"/Users/tds/blog/ghost/content/content/themes/uno-zen/assets/scss/components/_media-queries.scss",
+		"/Users/tds/blog/ghost/content/content/themes/uno-zen/assets/scss/modules/_utils.scss",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/Release/UnityLoader.js",
+		"/Users/tds/Mestrado/Tese/Registo de Tema/TDS_falhas-motores-eletricos.txt",
+		"/Users/tds/blog/contentGhost/config.js",
+		"/Users/tds/befirstdocker/database/dump/dump.sql",
+		"/Users/tds/Professional/CV/OnePageResume/css/screenstyle.css",
+		"/Users/tds/Professional/CV/OnePageResume/css/printstyle.css",
+		"/Users/tds/Mestrado/3Sem/IDV/assignment/data/hygdata_v3.csv",
+		"/Users/tds/Downloads/loggly_events_2016-01-25 14-11-36.880048.json",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/controllers/backoffice.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/UnityLoader.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/partials/createUser.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/server.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/Procfile",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/partials/createGame.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/partials/createCompany.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/partials/searchCompanyResult.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/config/config.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/backoffice/index.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/lib/i18n-2/index.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/views/index.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/models/index.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/index.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/models/index.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/index.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/header.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/controllers/dashboard.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/dashboard.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/users/myGames.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/searchGame.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/controllers/utilizadores.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/resultGames.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/assets/befirst/unitygame.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/public/UnityLoader.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/index.html",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/prototype/iniciativas.html",
+		"/Users/tds/Professional/Be First Project/source/befirst/README.md",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/proto/utilizadores/jogador.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/public/prototype/jogo.html",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/prototype/jogo.html",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/controllers/jogos.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/controllers/jogos.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/prototype/searchEmpresas.html",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/views/game/gamesSet.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/gamesSet.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/logs/game_801",
+		"/Users/tds/Professional/Be First Project/source/befirst/gulpfile.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/lib/i18n-2/locales/de.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/Dockerfile",
+		"/Users/tds/Professional/Be First Project/source/befirst/controllers/auth.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/assets/bootstrap-plugins/bootstrap-select.min.css",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/public/fonts/font-awesome-4.4.0/less/animated.less",
+		"/Users/tds/Professional/Be First Project/source/befirst/dist/public/fonts/font-awesome-4.4.0/scss/_animated.scss",
+		"/Users/tds/Professional/Be First Project/source/befirst/resources/client-files/bootstrap-plugins.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/stylesheets/bootstrap/bootstrap.css",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/img/graphics/bt_ord_sequencia.svg",
+		"/Users/tds/Professional/Be First Project/source/befirst/.idea/befirst.iml",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/assets/bootstrap-plugins/bootstrap-plugins.js",
+		"/private/var/folders/7q/_8558lr17912m3mrnbnrbrzm0000gn/T/node-proxy_proxy_Before_fe58f93dd8b394392e8915092ebe55636c752080.js",
+		"/Users/tds/Library/Application Support/Sublime Text 3/Packages/User/node.sublime-build",
+		"/Users/tds/AWS/credentials.csv",
+		"/Users/tds/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/45966C8B-A4A6-48FA-9430-1C5CEB661E02/aws.json",
+		"/Users/tds/.aws/credentials",
+		"/Users/tds/Professional/Be First Project/source/befirst/resources/client-files/readme.txt",
+		"/Users/tds/Professional/Be First Project/source/befirst/resources/client-files/bootstrap-datetimepicker.min.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/node_modules/moment/README.md",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/assets/bootstrap-plugins/bootstrap-plugins.css",
+		"/Users/tds/Professional/Be First Project/source/befirst/controllers/game.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/controllers/websockets.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/gamesContainer.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/helpers/security.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/proto/utilizadores/partials/cardGame.ejs",
+		"/Users/tds/Professional/Be First Project/source/befirst/helpers/dbfuncs.js",
+		"/Users/tds/Desktop/web-13.js",
+		"/Users/tds/Downloads/300-rise-of-an-empire-yify-english.srt",
+		"/Users/tds/Downloads/300.Rise.Of.An.Empire.2014.1080p.BluRay.x264-BLOW.srt",
+		"/Users/tds/anaconda/pkgs/ipython-3.2.0-py34_0/lib/python3.4/site-packages/IPython/nbconvert/nbconvertapp.py",
+		"/Users/tds/Downloads/Anaconda3-2.4.1-MacOSX-x86_64.sh",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/src/indexClient.html",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/build/indexClient.html",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/src/app/app.js",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/src/app/services/sampleService.js",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/src/app/components/subcomponent/subcomponent.js",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/build/index.html",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/src/typings/tsd.d.ts",
+		"/Users/tds/Mestrado/3Sem/CIAI/trabalhoGrupo/Hotel/src/main/resources/public/standAloneApp/src/app/app.js.map",
+		"/Users/tds/Downloads/ThreeJS_Test/index.html",
+		"/Users/tds/Mestrado/3Sem/IDV/assignment/data/OS_Hipparcos_test.txt",
+		"/Users/tds/Mestrado/3Sem/IDV/assignment/client/dataReduced.csv",
+		"/Users/tds/Downloads/ThreeJS_Test/main.js",
+		"/Users/tds/Mestrado/3Sem/IDV/Project/client/assets/js/d3.js",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/fun_record_II_I.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/list_I1.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/fun_I_fun_I_I_1.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/fun_I_I_1.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/frame_4.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/Demo.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/frame_2.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/record_record_IIref_intI1.j",
+		"/Users/tds/Mestrado/3Sem/ICL/assignment/language/labs/myLang/compilerExecs/frame.j",
+		"/Users/tds/Mestrado/Ignite/src/js/chart.js",
+		"/Users/tds/find.txt",
+		"/Users/tds/Downloads/IC/ast/ASTDecl.java",
+		"/Users/tds/Downloads/src 2/parser/Parser.jj",
+		"/Users/tds/Professional/Be First Project/source/befirst/views/game/index.ejs.html",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/Release/BeFirstWebGL.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/public/javascripts/menus.js",
+		"/Users/tds/Professional/Be First Project/source/befirst/dbfuncs.js",
+		"/Users/tds/Mestrado/3Sem/ICL/Testes/2014:1015/Teste2015/src/values/IValue.java",
+		"/Users/tds/Mestrado/3Sem/ICL/Testes/2014:1015/Teste2015/src/values/IType.java",
+		"/Users/tds/Mestrado/3Sem/ICL/Testes/2014:1015/Teste2015/src/values/IntegerValue.java",
+		"/Users/tds/Mestrado/3Sem/ICL/Repository/labs/myLang/compilerExecs/frame_1.j",
+		"/Users/tds/Mestrado/3Sem/ICL/Repository/labs/myLang/compilerExecs/frame.j"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/tds/blog/ghost/content/content/themes/uno-zen",
+			"/Users/tds/Professional/Be First Project/source/game",
+			"/Users/tds/Professional/Be First Project/source/game/Assets",
+			"/Users/tds/Professional/Be First Project/source/game/Assets/Scripts",
+			"/Users/tds/blog/content/content/themes/uno-zen",
+			"",
+			"/Users/tds/Professional/Be First Project/source/befirst/",
+			"/Users/tds/Professional/Be First Project/source/befirst/public/javascripts",
+			"/Users/tds/Professional/Be First Project/source/befirst(backup)/public/javascripts",
+			"/Users/tds/Professional/Be First Project/source/befirst/public/javascripts",
+			"/Users/tds/befirst",
+			"/Users/tds/Mestrado/ASD/asd-project/lab/lab/lab",
+			"/Users/tds/Mestrado/CP/ArticleReop_Proj_1",
+			"/Users/tds/Mestrado/ASD/asd-project/lab/lab/lab",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sigma_min",
+			"distance2line",
+			"maxdist",
+			"ponto_MaxDistRecta",
+			"881970008f4df94064c1",
+			"`befirst`",
+			"befirst\\.",
+			"befirst.",
+			".pdf",
+			"pdf",
+			"% section",
+			"sec:",
+			"\\section",
+			"section",
+			"<input type=\"checkbox\">",
+			"\"",
+			"+\"",
+			"TemplateData",
+			"TemplateData/",
+			"<a class=\"site\">",
+			"site",
+			"{",
+			"article",
+			"post-content",
+			"post-link",
+			"margin-t",
+			".pagination",
+			":hover",
+			"scroll",
+			"0 0",
+			"repeat",
+			"0 0",
+			"scroll",
+			"repeat",
+			"#ea6153",
+			"scroll",
+			"repeat",
+			"repeat scroll 0 0",
+			"scroll 0 0",
+			"repeat scroll 0 0",
+			"#ea6153",
+			"repeat",
+			"background:",
+			"background: url",
+			"backgroun",
+			"backgrounf",
+			"aside",
+			"margin-bottom: 2rem;",
+			"background-position",
+			"hover",
+			"post-link",
+			"background:url",
+			"2.5rem",
+			"-position",
+			"position",
+			"background-position",
+			"background: url",
+			"border-bottom",
+			"showInfo",
+			"langsMap",
+			"langsmap",
+			"showInfo2",
+			"langsMap",
+			"WAITFORALL",
+			"PLTURN",
+			"MYTURN",
+			"STRESS",
+			"RISCO",
+			"IMPROVISAÇÃOC",
+			"FLEX",
+			"IMP",
+			"Descricao",
+			"CD",
+			"ERROR",
+			"Validar",
+			"Gravar",
+			"ECARTAS",
+			"langsMap[",
+			"langsMap",
+			"TemplateData",
+			"navigation.left .links>li>a",
+			"profile",
+			"throw err",
+			"index",
+			"{{",
+			"index",
+			"inedx",
+			"{{",
+			"{{index}}",
+			"index.hbs",
+			"#open",
+			"Posts",
+			"post",
+			"ghostHunter",
+			"pdfData",
+			"utilizador",
+			"utilizadores",
+			"masterdata_estimulo",
+			"CONTINUOUS",
+			"befirst_searchGame",
+			",",
+			"createViewModelKO",
+			"$.each(data",
+			"'",
+			",",
+			"'",
+			"resizeableImage",
+			"orig_src",
+			"$container",
+			"init",
+			"CCEndere",
+			"error.",
+			"\n			",
+			"error",
+			"req.i18n.",
+			"CClimjogos",
+			"CCtelf",
+			"CCcodtelf",
+			"CCemail",
+			"					CCendereco:	req.i18n.__('Error'),\n",
+			"CCcidade",
+			"CCpais",
+			"CCadn",
+			"CCname",
+			"reg",
+			"CCimg",
+			"CCdfc",
+			"CClimusers"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"`befirstprod`",
+			",",
+			"\\n",
+			"querySelectors.filter",
+			"querySelectors.slice"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "thesisEletricMotors.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"ser",
+				"server.js"
+			],
+			[
+				"create",
+				"views/partials/createUser.ejs"
+			],
+			[
+				"index",
+				"views/game/index.ejs"
+			],
+			[
+				"uni",
+				"public/TemplateData/UnityProgress.js"
+			],
+			[
+				"in",
+				"views/game/index.ejs"
+			],
+			[
+				"resu",
+				"views/game/resultGames.ejs"
+			],
+			[
+				"uti",
+				"controllers/utilizadores.js"
+			],
+			[
+				"searchg",
+				"views/game/searchGame.ejs"
+			],
+			[
+				"games",
+				"views/users/myGames.ejs"
+			],
+			[
+				"das",
+				"views/dashboard.ejs"
+			],
+			[
+				"doce",
+				"Dockerfile"
+			],
+			[
+				"boot",
+				"resources/client-files/bootstrap-plugins.js"
+			],
+			[
+				"head",
+				"views/header.ejs"
+			],
+			[
+				"",
+				"package.json"
+			],
+			[
+				"serv",
+				"server.js"
+			],
+			[
+				"menu",
+				"public/javascripts/menus.js"
+			],
+			[
+				"preloa",
+				"public/javascripts/preloader.js"
+			],
+			[
+				"lock_ser",
+				"lock_server.cc"
+			],
+			[
+				"rsm_ter",
+				"rsm_tester.pl"
+			],
+			[
+				"rsm_tes",
+				"rsm_tester.cc"
+			],
+			[
+				"lock_serve",
+				"lock_server.cc"
+			],
+			[
+				"lock_tes",
+				"lock_tester.cc"
+			],
+			[
+				"rsm_cli",
+				"rsm_client.cc"
+			],
+			[
+				"lock_sm",
+				"lock_smain.cc"
+			],
+			[
+				"lock_cl",
+				"lock_client.h"
+			],
+			[
+				"rsm_clie",
+				"rsm_client.cc"
+			],
+			[
+				"lock_cli",
+				"lock_client.cc"
+			],
+			[
+				"lock_sma",
+				"lock_smain.cc"
+			],
+			[
+				"smain",
+				"extent_smain.cc"
+			],
+			[
+				"lock_pro",
+				"lock_protocol.h"
+			],
+			[
+				"lock_server",
+				"lock_server.cc"
+			],
+			[
+				"config.h",
+				"config.h"
+			],
+			[
+				"rsm_pro",
+				"rsm_protocol.h"
+			],
+			[
+				"config",
+				"config.cc"
+			],
+			[
+				"paxo",
+				"paxos.cc"
+			],
+			[
+				"rpc",
+				"rpc/rpc.h"
+			],
+			[
+				"pa",
+				"paxos.h"
+			],
+			[
+				"rsm.h",
+				"rsm.h"
+			],
+			[
+				"paxos.cc",
+				"paxos.cc"
+			],
+			[
+				"conf",
+				"config.cc"
+			],
+			[
+				"lock_",
+				"lock_smain.cc"
+			],
+			[
+				"rsm.cc",
+				"rsm.cc"
+			],
+			[
+				"rsm",
+				"rsm.h"
+			],
+			[
+				"lock",
+				"lock_protocol.h"
+			],
+			[
+				"hash",
+				"CP/Praticas/CP_T1_Hashtable-2/src/cp/articlerep/ds/HashTable.java"
+			],
+			[
+				"yfs",
+				"yfs_client1.log"
+			],
+			[
+				"test",
+				"test-lab-2.pl"
+			],
+			[
+				"yfs_c",
+				"yfs_client1.log"
+			],
+			[
+				"server",
+				"extent_server.cc"
+			],
+			[
+				"fuse",
+				"fuse.cc"
+			],
+			[
+				"y",
+				"ASD/lab/yfs_client.cc"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 430.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 190.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
