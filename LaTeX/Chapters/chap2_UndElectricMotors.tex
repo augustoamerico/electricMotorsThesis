@@ -65,7 +65,7 @@ The voltage phases of figure \ref{fig:balanced_tp_time_domain} can be expressed 
 	V_{cn}(t) = V_{m}\sqrt{2}\cos{\omega t - 240\degree} V
 \end{equation}
 
-where $V_{an}$ represents the voltage between phase \emph{a} and neutral, $V_{bn}$ represents the voltage between phase \emph{b} and neutral, $V_{cn}$ represents the voltage between phase \emph{c} and neutral, $V_{m}$ denotes the phasors' magnitude, $\omega$ represents the angular velocity - which is $2\pi f$, where $f$ is the frequency of the phase. 
+where $V_{an}$ represents the voltage between phase \emph{a} and neutral, $V_{bn}$ represents the voltage between phase \emph{b} and neutral, $V_{cn}$ represents the voltage between phase \emph{c} and neutral, $V_{m}$ denotes the phasors' magnitude and $\omega$ represents the angular velocity - which is $2\pi f$, where $f$ is the frequency of the phase. 
 
 These voltage phases can also be represented in phasors, where we can note that:
 
@@ -95,21 +95,21 @@ Since the phasors have the same magnitude and are the same amount of degrees apa
 	V_{cn} = V_{an}(1\angle_{+120\degree})
 \end{equation}
 
-These phasors can be represented on a phasor diagram, as shown in figure \ref{fig:balanced_tp_phasor_domain}. This differential potential between a given point (\emph{a},\emph{b} or \emph{c}) and the neutral is called the \emph{line-to-neutral voltage}. 
+These phasors can be represented on a phasor diagram, as shown in figure \ref{fig:balanced_tp_phasor_domain}. This potential difference between a given point (\emph{a},\emph{b} or \emph{c}) and the neutral is called the \emph{line-to-neutral voltage}. 
 An important property of the balanced voltage phasors set is the following ~\cite[chapter 11, p.~547]{Helfenstein2000}:
 \begin{equation} \label{eq:balanced_prop1}
 	V_{an} + V_{bn} + V_{cn} = 0
 \end{equation}
 as we can infer from figure \ref{fig:balanced_tp_phasor_domain}.
 
-The magnitude of these phasors are typically measured in \acrfull{rms}, which calculated by:
+The magnitude of these phasors are typically measured in \acrfull{rms}, which is calculated by:
 \begin{equation} \label{eq:rms}
 	X_{rms} = \sqrt{\frac{1}{N}\sum\limits_{i=1}^{N}x_{i}^2}
 \end{equation}
 
 \subsection{Line-to-line voltage Phasors}
 
-Besides the line-to-neutral voltage, there is also the line-to-line voltage - which is the difference potential between two phase lines.
+Besides the line-to-neutral voltage, there is also the line-to-line voltage - which is the potential difference between two phase lines.
 In the phasor diagram, this can be seen as the sum of two phasors representing the phases, as shown in figure \ref{fig:line_to_line_phasors}.
 
 
@@ -182,7 +182,7 @@ The $\Delta$ impedance ($Z_{\Delta}$) is three times greater than the Y impedanc
 \label{sec:three_phase_induction_motors}
 
 A motor is a machine that transforms electric energy in mechanical energy.
-Such a machine can be implemented with the support of a DC power supply (DC Motor) or with a AC power supply (AC Motor). This motors will have different characteristics, but both classes have the same purpose - to transform electric energy in mechanical movement.
+Such a machine can be implemented with the support of a DC power supply (DC Motor) or with a AC power supply (AC Motor).
 In the AC Motor class, there are still two kind of motors - the synchronous motors and the asynchronous motors, being the last one is also known as \acrfull{tpim}.
 
 
@@ -203,7 +203,7 @@ This kind of motors has been used, traditionally, in constant and variable-speed
 
 \subsection{Main Components}
 
-The \acrshort{ims} is also known as asynchronous motor. This term \emph{asynchronous} is used because the speed of the generated magnetic field is not equal to the speed of the rotor. The term \emph{indction} is used because the rotor movements is due to the electromotive forces exerced by the generated magnetic field.
+The \acrshort{ims} is also known as asynchronous motor. This term \emph{asynchronous} is used because the speed of the generated magnetic field is not equal to the speed of the rotor. The term \emph{induction} is used because the rotor movements is due to the electromotive forces exercised by the generated magnetic field.
 In figure \ref{fig:ims} (page \pageref{fig:ims}) you can see the several components of the \acrshort{ims}. You can see that the motor is composed by a fan, an end bell, a wiring box, a stator (and stator coils), a rotor (a squirrel-cage one) and bearings. The fan will mantain the motor at an appropriated temperature, while the stator will receive current from the power source connected to the motor and the rotor will rotate, supported by the bearings - creating mechanical movement.
 In this section, we will only cover the stator and the rotor, which are the main components of the motors. 
 
@@ -239,32 +239,48 @@ The \acrshort{ims} has a squirrel cage rotor, but there is another type of rotor
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=3.5in]{squirrel_cage_rotor}
-	\caption{A balanced three phase circuit with a load connected in $\Delta$}
+	\caption{A squirrel cage rotor}
 	\label{fig:squirrel_cage_rotor}
 \end{figure}
 
 Most of the \acrshort{tpim} (up to 90\%) are of squirrel cage type.
 As seen in figure \ref{fig:squirrel_cage_rotor}, this type of rotor consist of a cylindrical laminated core, having parallel slots on it. These parallel slots carry rotor conductors (represented as red arrows in figure \ref{fig:squirrel_cage_rotor}). In this type of rotor, heavy bars of copper, aluminum or alloys are used as rotor conductors instead of wires - as it would be in a wound rotor. 
-The rotor slots are slightly skewed to achieve following advantages:
+The rotor slots are slightly skewed to achieve the following advantages:
 \begin{enumerate}
-  \item it reduces locking tendency of the rotor, i.e. the tendency of rotor teeth to remain under stator teeth due to magnetic attraction
-  \item increases the effective transformation ratio between stator and rotor
-  \item increases rotor resistance due to increased length of the rotor conductor 
+  \item reduce locking tendency of the rotor, i.e. the tendency of rotor teeth to remain under stator teeth due to magnetic attraction
+  \item increase the effective transformation ratio between stator and rotor
+  \item increase rotor resistance due to increased length of the rotor conductor 
 \end{enumerate}
 
 
 \subsection{Working Principle}
 
-The \acrfull{ims} - as well as the others \acrfull{tpim} - working principle is based on the generation of a rotating magnetic field by the stator. The windings that exist in the stator will create several electromagnetic coils, as shown in figure \ref{fig:stator2}. These coils are power supplied by a three phase AC source, which have the property of being sinusoidal - changing the value between positive and negative over time. This will generate a rotating magnetic field that will induce and electromotive force on the rotor. 
+The \acrfull{ims} - as well as the others \acrfull{tpim} - working principle is based on the generation of a rotating magnetic field by the stator. The windings that exist in the stator will create several electromagnetic coils, as shown in figure \ref{fig:stator2}. These coils are power supplied by a three phase AC source, which have the property of being sinusoidal - changing the value between positive and negative over time. This will generate a rotating magnetic field that will induce an electromotive force on the rotor, as seen in figure \ref{fig:rotating_3pmf}. 
 This phenomena can also be view as an rotating magnet around the rotor. 
 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{Rotating-3-phase-magnetic-field}
+	\caption{A rotating magnetic field with 6 coils and 2 poles}
+	\label{fig:rotating_3pmf}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{rotating_squirrel_cage_rotor}
+	\caption{Representation of the rotating magnetic field around the squirrel cage rotor}
+	\label{fig:rotating_3pscr}
+\end{figure}
+
 Since the rotor has conductive components and the rotating magnetic field will create magnetic flux changes in the rotor, these magnetic flux changes will create a current in the rotor in such a way that it will create a magnetic field in the opposite direction of the magnetic flux change (Faraday-Lenz law).
-This will create a magnet in the rotor that will try to align itself with the rotating magnetic field.
+This will create a magnet in the rotor that will try to align itself with the rotating magnetic field, as illustrated in figure \ref{fig:rotating_3pscr}.
+
 Since the velocity in which the rotor rotates is lower than the rotational velocity of the magnetic field, the rotor will never align with the rotating magnetic field, creating the mechanical movement.
 
 \subsection{Properties}
 
-\subsubsection{Number of poles and Synchronous Speed}
+\subsubsection{Synchronous Speed}
 
 The Synchronous Speed is the speed at which the rotational magnetic field rotates. This speed is constant, and its given by:
 
@@ -279,8 +295,7 @@ Therefore, the max speed of an \acrshort{tpim} supplied by a 50hz power source i
 
 
 \subsubsection{Slip}
-
-In an induction motor, the rotors rotational speed is not equal to the synchronous speed. This difference between synchronous speed and rotor speed is commonly referred to as the \emph{slip} of the rotor. We can measure this split in rpms by subtracting the rotor speed to the synchronous speed, being it has follow:
+In an induction motor, the rotors rotational speed is not equal to the synchronous speed, since rotation at synchronous speed would result in no induced rotor current. This difference between synchronous speed and rotor speed is commonly referred to as the \emph{slip} of the rotor. We can measure this split in rpm by subtracting the rotor speed to the synchronous speed, being it has follow:
 
 \begin{equation} \label{eq:split}
 	 n_{s} - n
@@ -300,22 +315,64 @@ The slip will depend of mechanical friction and the load.
 
 \subsubsection{Efficiency and Losses}
 
+It is important to refer that slip is related to efficiency - the bigger the slip, the bigger the losses will be, thus lowering the motor's efficiency. The full-load slip gives an idea of the motor efficiency($\eta$), where:
+\begin{equation} \label{eq:efficiency_max}
+	\eta <= 100\% - s
+\end{equation}
+
+The efficiency of a motor is greater the greater its power, being that the slip decreases with increasing power. Typical efficiency values for \acrshort{ims} are 80\% for 0.75kW power, 95\% for 100kW power and more than 98\% for high power motors.
+
 \subsubsection{Torque}
+
+The full-load torque of the motor can be known if the power and full-load speed are known, by the following expression:
+\begin{equation} \label{eq:efficiency_max}
+	T = \frac{P}{n}\times 9550
+\end{equation}
+where $T$ is measured in Newton.Meter (N.m), $P$ is power and is measured in KiloWatt (KW) and $n$ is the rotor speed and is measured in rpm.
+
+When the motor operates at full-load, the generated torque is the necessary to maintain the rotation of the load at full-load speed. However, at start, the necessary torque has to be bigger than the force imposed by the load, as seen in figure \ref{fig:torque_speed_curve}, where the rated torque is the maximum torque that the motor can safely apply continuously to the load at any speed within the rated speed range of the motor.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=4in]{torque_rotor_speed}
+	\caption{Typical \acrshort{tpim} torque-speed curve for constant voltage, constant frequency operation}
+	\label{fig:torque_speed_curve}
+\end{figure}
 
 \subsubsection{Motor Start}
 
-At the start, the rotor is stationary ($n = 0$), the split (equation \ref{eq:perc_split}) is 1. Then, the field produced by the rotor currents revolves at the same speed as the stator field, creating a starting torque. 
-This torque will tend to turn the rotor in the direction of rotation of the stator-inducing field. If this torque is sufficient to overcome the opposition to rotation created by the shaft load, the rotor will come up to its operating speed.
-\todo[inline]{Rever isto, que n tenho a certeza se ao início é preciso mais corrente ou menos corrente, e até acho que é menos corrente}
-Therefore, the initial torque has to be bigger than the nominal torque - where the nominal torque is the torque under which the motor has been constructed to operate.
+At the start, the rotor is stationary ($n = 0$) and the split (equation \ref{eq:perc_split}) is 1. Then, the field produced by the rotor currents revolves at the same speed as the stator field, creating a starting torque. 
+This torque will tend to turn the rotor in the direction of rotation of the stator-inducing field. If this torque is sufficient to overcome the opposition to rotation created by the shaft load, the rotor will come up to its operating speed - as seen in figure \ref{fig:torque_speed_curve}.
 
-To create a start torque, more current is needed than the nominal current. 
-If the motor continues to operate with this higher current, it can have adverse effects to the motor (deteriorating insulation due to overheating) as well as to the electrical installation (triggering the protection device).
+If an induction motor is directly switched on from the supply it takes 5 to 7 times its full load current and develops a torque which is only 1.5 to 2.5 times the full load torque. 
+This large starting current can have adverse effects to the motor (deteriorating insulation due to overheating) as well as to the electrical installation (triggering the protection device), where a large voltage drop in the line can affect the the operation of other devices connected to the same line.
 
-Therefore, alternatives methods are needed for starting motors. The two most used are \emph{start-delta} starters and 
+Therefore, various starting methods of induction motors were developed, such as:
+
+\begin{itemize}
+  \item 
+  \emph{Using Primary Resistors}, which are applied in series in the stator's windings. Due to Joule effect losses, this method is anti-economic.
+  \item 
+  \emph{Auto-Transformers} are used to help the motor start by changing the voltage. Due to the auto-transformer price, this is an expensive method.
+  \item 
+  \emph{Star-Delta Starter} is a device that initially connects the stator in Y configuration and after a certain velocity ($n$), it changes that connection to a $\Delta$ configuration, raising the voltage applied to the windings.
+  \item 
+  \emph{Power Converter} is a device that can control motor speed as well as the motor start.
+\end{itemize}
 
 \subsubsection{Motor Speed Control}
+\acrshort{ims} speed control can be done using several methods
 
+\begin{itemize}
+  \item 
+  The stator can be projected in such a way that alternating the coil's windings leads to a different number of poles. In spite of being a robust and efficient method, it has the downsides of the resulting velocities being only discrete and the stators capable of this are more expensive and complex. 
+  \item 
+  \emph{Auto-Transformers} are used to help the motor start by changing the voltage. Due to the auto-transformer price, this is an expensive method.
+  \item 
+  \emph{Star-Delta Starter} is a device that initially connects the stator in Y configuration and after a certain velocity ($n$), it changes that connection to a $\Delta$ configuration, raising the voltage applied to the windings.
+  \item 
+  \emph{Power Converter} is a device that can control motor speed as well as the motor start.
+\end{itemize}
 
 \section{Relevance and Landscape of Three Phase Induction Motors} % (fold)
 \label{sec:tpin_relevance}
