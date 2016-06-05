@@ -1,0 +1,330 @@
+%!TEX root = /Users/tds/thesisLatek/template.tex
+%Developed using Sublime Text 3 with LaTexTools plugin
+%SUPER+b for compiling latex to pdf
+%Don't forget to use SUPER+R to jump between top level commands!
+%F6 to spell check
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter2.tex
+%% UNL thesis document file
+%%
+%% Chapter with the template manual
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Understanding Three Phase Induction Motors}
+\label{cha:users_manual}
+
+% ================
+% = Introduction =
+% ================
+
+
+This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase electric motor - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it's presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the lyfe cycle cost of these motors and approach the current maintenance strategies.
+
+\section{Three phase systems} % (fold)
+\label{sec:three_phase_systems}
+
+A three-phase system is an \acrshort{ac}-circuit which contains three voltage power sources. These systems have a power source with three phases and a three phase load that connects its phases to the power source phases. The generation of electric power in a three-phase system is accomplished with an electric generator, which converts mechanical energy to electric energy appropriated to this mode. Each phase has a sinusoidal voltage with a magnitude and frequency. An example of a three phase electric system squematic is reprensented in figure \ref{fig:balanced_tp_circuit}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{3p3}
+	\caption{A balanced three phase circuit with a load connected in $\Delta$}
+	\label{fig:balanced_tp_circuit}
+\end{figure}
+
+\subsection{Motivation}
+
+A three-phase system has several advantages over a single-phase system - and that's why the three-phase system has been adopted universally for transmission of AC power.
+
+With a three-phase system, we can get an higher power/weight ratio of alternators, since a three-phase alternator is smaller and lighter than a single phase alternator of the same power output. Also, the three-phase transmission system  requires less copper or aluminium to transmit the same quantity of power of a specific distance than a single phase system.
+
+In Single phase systems, the instantaneous power power is sinusoidal, therefore not constant, resulting in power vibrations. In a balanced three phase power system, though, the instantaneous power is always the same.
+
+\subsection{Characteristics}
+
+As the name implies, these systems have a three-phase system voltage. If the sinusoidal voltages have the same magnitude and frequency and each voltage is 120º out of phase with the other two, the voltages are said to be balanced. If the loads are such that the currents produced by the voltages are also balanced, the entire circuit is referred to as a \emph{balanced three-phase circuit}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{threephase}
+	\caption{Balanced 3-Phase Variables in Time Domain}
+	\label{fig:balanced_tp_time_domain}
+\end{figure}
+
+Each phase is separated by 120º, which means that if phase \emph{a} has a value of 0 in 0º, then the phase \emph{b} will have a value of 0 in 0º + 120º and phase \emph{c} will have a value 0 in 0º + 120º + 120º, as in figure \ref{fig:balanced_tp_time_domain}. Given that the voltages represented in the figure are the difference between each phases' potential energy and neutral's potential energy, each phase can also be noted as phase \emph{an}, \emph{bn} and \emph{cn}.
+
+\subsection{Line-to-neutral voltage phasors}
+
+The voltage phases of figure \ref{fig:balanced_tp_time_domain} can be expressed in the time domain as:
+\begin{equation} \label{eq:balanced_tpVan_timedomain}
+	V_{an}(t) = V_{m}\sqrt{2}\cos{\omega t} V
+\end{equation}
+\begin{equation} \label{eq:balanced_tpVan_timedomain}
+	V_{bn}(t) = V_{m}\sqrt{2}\cos{\omega t - 120\degree} V
+\end{equation}
+\begin{equation} \label{eq:balanced_tpVan_timedomain}
+	V_{cn}(t) = V_{m}\sqrt{2}\cos{\omega t - 240\degree} V
+\end{equation}
+
+where $V_{an}$ represents the voltage between phase \emph{a} and neutral, $V_{bn}$ represents the voltage between phase \emph{b} and neutral, $V_{cn}$ represents the voltage between phase \emph{c} and neutral, $V_{m}$ denotes the phasors' magnitude, $\omega$ represents the angular velocity - which is $2\pi f$, where $f$ is the frequency of the phase. 
+
+These voltage phases can also be represented in phasors, where we can note that:
+
+\begin{equation} \label{eq:balanced_tpVan}
+	V_{an} = V_{m}\angle_{\phi}
+\end{equation}
+\begin{equation} \label{eq:balanced_tpVbn}
+	V_{bn} = V_{m}\angle_{\phi - 120\degree} 
+\end{equation}
+\begin{equation} \label{eq:balanced_tpVcn}
+	V_{cn} = V_{m}\angle_{\phi - 240\degree} = V_{m}\angle_{\phi + 120\degree} 
+\end{equation}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{phasorDiagramExample}
+	\caption{Phasor diagram for a balanced three phase voltage source}
+	\label{fig:balanced_tp_phasor_domain}
+\end{figure}
+
+Since the phasors have the same magnitude and are the same amount of degrees apart of each other, we can also represent them as follow:
+
+\begin{equation} \label{eq:balanced_Vbn2}
+	V_{bn} = V_{an}(1\angle_{-120\degree})
+\end{equation}
+\begin{equation} \label{eq:balanced_Vcn2}
+	V_{cn} = V_{an}(1\angle_{+120\degree})
+\end{equation}
+
+These phasors can be represented on a phasor diagram, as shown in figure \ref{fig:balanced_tp_phasor_domain}. This differential potential between a given point (\emph{a},\emph{b} or \emph{c}) and the neutral is called the \emph{line-to-neutral voltage}. 
+An important property of the balanced voltage phasors set is the following ~\cite[chapter 11, p.~547]{Helfenstein2000}:
+\begin{equation} \label{eq:balanced_prop1}
+	V_{an} + V_{bn} + V_{cn} = 0
+\end{equation}
+as we can infer from figure \ref{fig:balanced_tp_phasor_domain}.
+
+The magnitude of these phasors are typically measured in \acrfull{rms}, which calculated by:
+\begin{equation} \label{eq:rms}
+	X_{rms} = \sqrt{\frac{1}{N}\sum\limits_{i=1}^{N}x_{i}^2}
+\end{equation}
+
+\subsection{Line-to-line voltage Phasors}
+
+Besides the line-to-neutral voltage, there is also the line-to-line voltage - which is the difference potential between two phase lines.
+In the phasor diagram, this can be seen as the sum of two phasors representing the phases, as shown in figure \ref{fig:line_to_line_phasors}.
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{linetolinephasor}
+	\caption{Phasor representation of line-to-line voltages}
+	\label{fig:line_to_line_phasors}
+\end{figure}
+
+We can obtain the set of line-to-line voltages as the following ~\cite[chapter 11, p.~548]{Helfenstein2000}:
+
+\begin{equation} \label{eq:balanced_tpVab}
+	V_{ab} = \sqrt{3}V_{p}\angle_{\phi+30\degree}
+\end{equation}
+\begin{equation} \label{eq:balanced_tpVbc}
+	V_{bc} = \sqrt{3}V_{p}\angle_{\phi - 120\degree + 30\degree} = \sqrt{3}V_{p}\angle_{\phi - 90\degree}
+\end{equation}
+\begin{equation} \label{eq:balanced_tpVca}
+	V_{ca} = \sqrt{3}V_{p}\angle_{\phi - 240\degree + 30\degree} = \sqrt{3}V_{p}\angle_{\phi -210\degree} 
+\end{equation}
+
+where $V_{p}$ is the phase voltage magnitude (since the system is balanced, it can either be phase \emph{a}, \emph{b} or \emph{c}).
+
+\subsection{Connection types}
+
+From the standpoint of the user who connects a balanced load to the balanced three phase voltage source, there are two possible configurations for the load. The load can be connected in \emph{wye} (Y) - figure \ref{fig:wye_connected_load} -  or in \emph{delta} ($\Delta$) - figure \ref{fig:delta_connected_load}.
+
+As you can notice from the figures \ref{fig:wye_connected_load} and \ref{fig:delta_connected_load}, these configurations differ in the way that Y connections are all connected to the line neutral, whereas the $\Delta$ connections are connected with each two other phase - being it phase \emph{a} connected to phase \emph{b}, phase \emph{b} connected to phase \emph{c} and phase \emph{c} connected to phase \emph{a}. Thus, connecting the load in Y configuration will create a line impedance of $Z_{Y}$, while connecting the load in $\Delta$ will create a line impedance of $Z_{\Delta}$.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{wye_connection}
+	\caption{Wye connected load}
+	\label{fig:wye_connected_load}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{delta_connection}
+	\caption{Delta connected load}
+	\label{fig:delta_connected_load}
+\end{figure}
+
+In a Y connected system, the line current for the phase \emph{a} is:
+\begin{equation} \label{eq:balanced_tpIa}
+	I_{a} = \frac{V_{an}}{Z_{y}} = \frac{V_{p}\angle_{\phi}}{Z_{y}}
+\end{equation}
+where $I_{b}$ and $I_{c}$ have the same magnitude but lag $I_{a}$ by 120\degree and 240\degree (respectively), since it is a balanced circuit. We can also denote that the neutral current is 0, since:
+\begin{equation} \label{eq:balanced_tpIn}
+	I_{n} = (I_{a} + I_{b} + I_{c}) = 0
+\end{equation}
+
+In a $\Delta$ connected system, since the line is connected between two phases, the line voltage that connects phase \emph{a} to phase \emph{b} ($V_{ab}$) depends on the phase voltage ($V_{p}$), being the $V_{ab}$ described by the equation \ref{eq:balanced_tpVab}, on page \pageref{eq:balanced_tpVab}.
+
+The line voltages for $V_{bc}$ and $V_{ca}$ can also be defined the same way, being it described by equation \ref{eq:balanced_tpVbc} and \ref{eq:balanced_tpVca} (page \pageref{eq:balanced_tpVab}), respectively. 
+
+The phase current for $I_{ab}$ is:
+\begin{equation} \label{eq:balanced_tpIab}
+	I_{ab} = \frac{V_{ab}}{Z_{\Delta}}
+\end{equation}
+
+The $\Delta$ impedance ($Z_{\Delta}$) is three times greater than the Y impedance ($Z_{Y}$) ~\cite[chapter 11, p.~555]{Helfenstein2000}.
+
+
+% section sec:three_phase_systems (end)
+
+
+\section{Three Phase Induction Motors} % (fold)
+\label{sec:three_phase_induction_motors}
+
+A motor is a machine that transforms electric energy in mechanical energy.
+Such a machine can be implemented with the support of a DC power supply (DC Motor) or with a AC power supply (AC Motor). This motors will have different characteristics, but both classes have the same purpose - to transform electric energy in mechanical movement.
+In the AC Motor class, there are still two kind of motors - the synchronous motors and the asynchronous motors, being the last one is also known as \acrfull{tpim}.
+
+
+Then, an \acrshort{tpim} can be implemented for a specific kind of phase voltage - single-phase, two-phase or three-phase.
+By two-phases or three-phases (polyphase) we mean that the stator contains multiple distinct windings per motor pole, driven by corresponding time shifted sine waves.
+Our focus will be on the \acrfull{tpim}.
+
+These motors are  globally the most used, since they have several advantages over the single phase motors. For example, a three-phase motor is self starting due to the rotating magnetic field, while a single phase motor requires a capacitator and an auxiliary winding ~\cite{Ferreira1}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{ims}
+	\caption{\acrfull{ims}}
+	\label{fig:ims}
+\end{figure}
+
+This kind of motors has been used, traditionally, in constant and variable-speed drive applications that do not offer fast dynamic processes. Because of the recent development of several new control techniques, this situation is changing. This is due to the fact that the \acrfull{ims} is much cheaper and more rugged than its competitors.
+
+\subsection{Main Components}
+
+The \acrshort{ims} is also known as asynchronous motor. This term \emph{asynchronous} is used because the speed of the generated magnetic field is not equal to the speed of the rotor. The term \emph{indction} is used because the rotor movements is due to the electromotive forces exerced by the generated magnetic field.
+In figure \ref{fig:ims} (page \pageref{fig:ims}) you can see the several components of the \acrshort{ims}. You can see that the motor is composed by a fan, an end bell, a wiring box, a stator (and stator coils), a rotor (a squirrel-cage one) and bearings. The fan will mantain the motor at an appropriated temperature, while the stator will receive current from the power source connected to the motor and the rotor will rotate, supported by the bearings - creating mechanical movement.
+In this section, we will only cover the stator and the rotor, which are the main components of the motors. 
+
+\subsubsection{Stator}
+
+The stator is the static part of the motor, which contains windings connected to a three-phase energy source. The stator represented in the figure \ref{fig:stator1} has six coils, and will generate a magnetic field with 2 poles when connected to a three-phase power source - since it has 6 coils (3 pairs), each pair of coils will connected to each phase of the three-phase power source supply.
+
+These pairs of coils are connected in series for each phase of the power source supply, and corresponde to the opposite poles of an electromagnet. The figure \ref{fig:stator2} is an example of that magnet configuration, where each A, B and C is connected to its own phase of the three phase power supply.
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{stator_example}
+	\caption{A stator}
+	\label{fig:stator1}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{stator_example2}
+	\caption{A stator configuration model}
+	\label{fig:stator2}
+\end{figure}
+
+In spite of the stators in the figures \ref{fig:stator1} and \ref{fig:stator2} have only 6 coils and generate a magnetic field with 2 poles, a stator can generate a magnetic field with 2, 4, 6, 8, 10, 12 or more poles - but motors with more than 12 poles are not normally used. For the stator to generate as many poles as needed, it has to have a specific amount of coils configured in such a way so that the stator can generate the needed poles.
+
+
+\subsubsection{Rotor}
+
+The rotor is the rotative part of the motor and is inside the stator. In its essence, a rotor is a part of the motor where the magnetic field is induced so that it is pulled against the rotational magnetic field of the stator. Due to that purpose, the rotor has to be a conductor and has to have the hability to rotate.
+The \acrshort{ims} has a squirrel cage rotor, but there is another type of rotor - the wound rotor. 
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3.5in]{squirrel_cage_rotor}
+	\caption{A balanced three phase circuit with a load connected in $\Delta$}
+	\label{fig:squirrel_cage_rotor}
+\end{figure}
+
+Most of the \acrshort{tpim} (up to 90\%) are of squirrel cage type.
+As seen in figure \ref{fig:squirrel_cage_rotor}, this type of rotor consist of a cylindrical laminated core, having parallel slots on it. These parallel slots carry rotor conductors (represented as red arrows in figure \ref{fig:squirrel_cage_rotor}). In this type of rotor, heavy bars of copper, aluminum or alloys are used as rotor conductors instead of wires - as it would be in a wound rotor. 
+The rotor slots are slightly skewed to achieve following advantages:
+\begin{enumerate}
+  \item it reduces locking tendency of the rotor, i.e. the tendency of rotor teeth to remain under stator teeth due to magnetic attraction
+  \item increases the effective transformation ratio between stator and rotor
+  \item increases rotor resistance due to increased length of the rotor conductor 
+\end{enumerate}
+
+
+\subsection{Working Principle}
+
+The \acrfull{ims} - as well as the others \acrfull{tpim} - working principle is based on the generation of a rotating magnetic field by the stator. The windings that exist in the stator will create several electromagnetic coils, as shown in figure \ref{fig:stator2}. These coils are power supplied by a three phase AC source, which have the property of being sinusoidal - changing the value between positive and negative over time. This will generate a rotating magnetic field that will induce and electromotive force on the rotor. 
+This phenomena can also be view as an rotating magnet around the rotor. 
+
+Since the rotor has conductive components and the rotating magnetic field will create magnetic flux changes in the rotor, these magnetic flux changes will create a current in the rotor in such a way that it will create a magnetic field in the opposite direction of the magnetic flux change (Faraday-Lenz law).
+This will create a magnet in the rotor that will try to align itself with the rotating magnetic field.
+Since the velocity in which the rotor rotates is lower than the rotational velocity of the magnetic field, the rotor will never align with the rotating magnetic field, creating the mechanical movement.
+
+\subsection{Properties}
+
+\subsubsection{Number of poles and Synchronous Speed}
+
+The Synchronous Speed is the speed at which the rotational magnetic field rotates. This speed is constant, and its given by:
+
+\begin{equation} \label{eq:synchronous_speed}
+	 n_{s} = \frac{120f}{p}(rpm)
+\end{equation}
+
+where $f$ is the voltage frequency and $p$ is the number of poles in the stator.
+
+From the expression \ref{eq:synchronous_speed} we can see that the greater is the pole quantity (always in pairs), the lower is the rotating magnetic field frequency.
+Therefore, the max speed of an \acrshort{tpim} supplied by a 50hz power source is 3000rmp, due to the fact that the minimum value of poles number is 2.
+
+
+\subsubsection{Slip}
+
+In an induction motor, the rotors rotational speed is not equal to the synchronous speed. This difference between synchronous speed and rotor speed is commonly referred to as the \emph{slip} of the rotor. We can measure this split in rpms by subtracting the rotor speed to the synchronous speed, being it has follow:
+
+\begin{equation} \label{eq:split}
+	 n_{s} - n
+\end{equation}
+
+where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
+
+However, \emph{slip} is more usually expressed as a fraction of synchronous speed. The \emph{factional slip} $s$ is
+
+\begin{equation} \label{eq:perc_split}
+	s = \frac{n_{s} - n}{n_{s}} 
+\end{equation}
+
+where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
+
+The slip will depend of mechanical friction and the load.
+
+\subsubsection{Efficiency and Losses}
+
+\subsubsection{Torque}
+
+\subsubsection{Motor Start}
+
+At the start, the rotor is stationary ($n = 0$), the split (equation \ref{eq:perc_split}) is 1. Then, the field produced by the rotor currents revolves at the same speed as the stator field, creating a starting torque. 
+This torque will tend to turn the rotor in the direction of rotation of the stator-inducing field. If this torque is sufficient to overcome the opposition to rotation created by the shaft load, the rotor will come up to its operating speed.
+\todo[inline]{Rever isto, que n tenho a certeza se ao início é preciso mais corrente ou menos corrente, e até acho que é menos corrente}
+Therefore, the initial torque has to be bigger than the nominal torque - where the nominal torque is the torque under which the motor has been constructed to operate.
+
+To create a start torque, more current is needed than the nominal current. 
+If the motor continues to operate with this higher current, it can have adverse effects to the motor (deteriorating insulation due to overheating) as well as to the electrical installation (triggering the protection device).
+
+Therefore, alternatives methods are needed for starting motors. The two most used are \emph{start-delta} starters and 
+
+\subsubsection{Motor Speed Control}
+
+
+\section{Relevance and Landscape of Three Phase Induction Motors} % (fold)
+\label{sec:tpin_relevance}
+\todo[inline]{Reler a parte dos tipos de motores elétricos industriais para fazer o enquadramento de onde se situa o MIs}
+Tipos de motor elétricos industriais ~\cite{Ferreira1}
+
+
+\section{Three Phase Induction Motors' Maintenance and Life-cycle} % (fold)
+\label{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle}
+
+\section{Summary} % (fold)
+\label{sec:tpem_summary}

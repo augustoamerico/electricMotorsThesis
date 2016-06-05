@@ -1,0 +1,81 @@
+%!TEX root = /Users/tds/thesisLatek/template.tex
+%Developed using Sublime Text 3 with LaTexTools plugin
+%SUPER+b for compiling latex to pdf
+%Don't forget to use SUPER+R to jump between top level commands!
+%F6 to spell check
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% chapter1.tex
+%% UNL thesis document file
+%%
+%% Chapter with introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\unlthesis}{\emph{unlthesis}}
+\newcommand{\unlthesisclass}{\texttt{unlthesis.cls}}
+
+\chapter{Introduction}  
+\label{cha:introduction} 
+
+This is the introductory chapter of this dissertation. You will be presented the context in which this work is included, as well as the motivation that lead to the development of this thesis in section \ref{sec:motivation}. Section \ref{sec:problem} will describe the problem this thesis is approaching and disclose its main goals. Furthermore, section \ref{sec:proposed_solution} will present the \emph{as is} proposed solution, following the contributions of this thesis in section \ref{sec:contributions}. At last, section \ref{sec:outline} presents the remaining chapters of this dissertation.
+
+\section{Context and Motivation} % (fold)
+\label{sec:motivation}
+
+Electric Motors are part of the industrial equipments' great majority. They are electrical machines that convert electrical energy into mechanical energy and they can be found in applications as diverse as industrial fans, blowers, pumps, compressors, conveyors, lifts, households appliances, power tools, etc. 
+These motors are integrated in \acrfull{emfs}, which are also composed by a power supply, electric controller, mechanical transmitter and a load. 
+In terms of electrical energy consumed in Industry, electric motors are responsible for the consumption of 30-40\% of that energy word-wide, 50-60\% of that energy in Developed Countries and 70-75\% of that energy in European Union ~\cite{Ferreira1} - making them one of the most important electrical charges. 
+Therefore, even small increases in the efficiency of \acrshort{emfs} will have a very significant impact in the reduction of energy consumption.
+
+
+Looking to the landscape of electric motor types in the Industry, the most used is the \acrfull{ims} due to its relative low cost, good efficiency and high availability - representing about 85-90\% of the motors installed in the industry~\cite{Ferreira1}. 
+These motors have a life expectancy of 12 to 20 years, in which they are repaired typically 2 to 4 times and consume energy in such a way that its energy consumption can cost up to 200 times their startup cost - being this energy consumption the exploration cost of an electric motor. 
+Both startup cost and exploration cost are part of the \acrfull{lcc}, being the maintenance cost and the exploration cost the most expensive ones in the \acrshort{lcc} ~\cite{Ferreira1} (this subject is further discussed in section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle}). One aspect that is related to both costs is the quality of the maintenance, which is directly related to the motor's efficiency and availability. 
+In the production sector, if an electric motor fails unexpectedly, not only is that failure a cost, it can provoke another failure elsewhere in the  \acrshort{emfs} - or in the systems that depends of its mechanical work - and it can also mean that the whole production line will be stopped. The costs associated to these unexpected failures are called the outage costs. Then again, one aspect that can minimize these occurrences is the quality of the maintenance. Therefore, the investment in maintenance practices that improve the efficiency and availability of electric motors is very attractive to the Industry.
+
+There are maintenance practices that allow the improvement of the efficiency and availability of electric motors, like preventive maintenance and predictive maintenance. 
+Predictive Maintenance is a type of maintenance whose goal is to provide timely malfunction signals of the motors' status, minimizing the probability of an outage.  
+On the other hand, if the malfunctions are detected in an early stage then the repair actions tend to be less costly, not only because it is possible to timely plan the repair, as well as the malfunction tend to stay contained to its original location, not spreading to other areas of the motor.
+
+In an era where the \acrfull{iot} is being massively adopted by the industry and where the term \acrfull{ds} is a buzzword, comes up the possibility of having a solution that relies on a proper trained model that uses the online data provided by sensors to provide insights and answers. 
+With an infrastructure of this nature, it would be possible not only to predict failures as well as give real time insights of the electric motors' status. With this insights and predicted failures, it would led to an improvement of efficiency and availability, reduction in exploration costs, reduction in maintenance costs and a greater security in the decision-making process for maintenance.
+
+Há motores que já vêm equipados com sensores, e outros não.
+Dos sensores que já vêm equipados com sensores, essa info pode ser aproveitada para fazer um modelo.
+Para aqueles que não vêm equipados com sensores, há a opção de se instalar sensores - podendo as análises destes sensores serem intrusivas ou não intrusivas.
+Na categoria das análises não intrusivas, existe a Electrical Signature Analysis
+
+
+Guidelines:
+- Minimizar outages
+- Conseguir planear arranjos/paragens por avaria através de um modelo preditivo
+- conseguir maximixar o tempo de vida de um motor
+- conseguir aumentar a produtividade e tempo de produção de uma linha
+
+% section motivation (end)
+
+
+\section{Problem} % (fold)
+\label{sec:problem}
+
+It is up to you, the student, to read the FCT and/or UNL regulations on how to format and submit your MSc or PhD dissertation.  
+
+This template is endorsed by the FCT-UNL and even linked from its web pages, but it is not an official template.
+%
+This template exists to make your life easier, but in the end of the line you are accountable for both the looks and the contents of the document you submit as your dissertation.
+
+\section{Proposed Solution} % (fold)
+\label{sec:proposed_solution}
+
+
+The proposed solution is a procedure to acquire and analyze electrical signals for condition monitoring of electrical machines through motor current signature analysis in order to get the best possible maintenance results in an industrial environment.
+
+% section electric_motors_basics (end)
+
+
+
+
+\section{Contributions} % (fold)
+\label{sec:contributions}
+
+\section{Outline} % (fold)
+\label{sec:outline}
+

@@ -8,8 +8,8 @@
 %% visit http://creativecommons.org/licenses/by-nc/4.0/.
 %%
 %% Version 2016/02/22 [3.1.2]
-%% Departamento de Informática
-%% Faculdade de Ciências e Tecnologia
+%% Departamento de InformÃ¡tica
+%% Faculdade de CiÃªncias e Tecnologia
 %% Universidade Nova de Lisboa
 %% BUGS and SUGGESTIONS: please submit an issue at the project web page
 %%      at: https://github.com/joaomlourenco/unlthesis/
@@ -20,16 +20,16 @@
 %%          https://www.facebook.com/groups/unlthesis/
 %%
 %% Authors / Contributors:
-%%      - João Lourenço <joao.lourenco@fct.unl.pt>
+%%      - JoÃ£o LourenÃ§o <joao.lourenco@fct.unl.pt>
 %%      - Bruno Candeias <b.candeias@campus.fct.unl.pt>
 %%
 %% DONATIONS:
 %%     If you think this template really helped you while writing your thesis,
 %%     think about doing a small donation. Just access the website 
 %%     https://github.com/joaomlourenco/unlthesis/
-%%     and click in the “Donation” link.
+%%     and click in the â€œDonationâ€ link.
 %%     I'll keep a list thanking to all the identified donors that identify
-%%     themselves in the “*Add special instructions to the seller:*” box.
+%%     themselves in the â€œ*Add special instructions to the seller:*â€ box.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % The default option marked with (*)
@@ -37,8 +37,8 @@
   doctype=mscplan,          % phd(*), phdplan, phdprop, msc, mscplan, bsc
   school=unl/fct,       % unl/fct(*), unl/fcsh, unl/ims, ul/ist
   lang=en,              % en(*), fr, it, pt
-  coverlang=pt,         % defaults to main language
-  copyrightlang=pt,     % defaults to main language
+  coverlang=en,         % defaults to main language
+  copyrightlang=en,     % defaults to main language
   fontstyle=kpfonts,    % baskervaldx bookman charter ebgaramond fbb fourier garamond
                         % heuristica kpfonts(*) libertine mathpazo1 mathpazo2 newcent
                         % newpx newtx 
@@ -51,7 +51,7 @@
                         % the list of committee memebers
 	spine=false,          % (Set to 'true' for PRINTING the book spine)
 	biblatex={            % Options for biblatex (see biblatex documentation)
-		style=numeric,      % numeric(*), alphabetic, authoryear, bwl-FU
+		style=alphabetic,      % numeric(*), alphabetic, authoryear, bwl-FU
 		sorting=nyt,        % none, nyt(*), ynt
 		firstinits=true,    % render all first and middle names as initials
 		sortcites=true,     % If numeric, sort cites by crescent order
@@ -85,6 +85,15 @@
 \usepackage{booktabs}		% Beautiful simple tables
 \usepackage{paralist}		% To enable customizble enumerates
 
+\usepackage{graphicx}
+\usepackage[inkscape={/Applications/Inkscape.app/Contents/Resources/bin/inkscap‌​e -z -C}]{svg}
+
+%% ADDED BY ME
+\usepackage{amsmath}
+\usepackage{tocloft}
+\usepackage{gensymb}
+%% __END ADDED BY ME
+
 %% IMPORTANT (consider removing/commenting)
 %\usepackage{colortbl}		% Use colors in background of table cells
 \usepackage[textsize=footnotesize]{todonotes}	% To register TODO notes in the text
@@ -100,8 +109,10 @@
 % Costumization of some packages
 %------------------------------------------------------------------
 
+
+
 % Where to look for figures
-% \prependtographicspath{{some-filder-here}}
+\prependtographicspath{{/Users/tds/thesisLatek/Chapters/Figures}}
 
 % Setup of listings, for more information check the 'listings' package manual
 \lstset{
@@ -124,7 +135,7 @@
 %        and file 'unl-thesis/lang-text.clo'
 % You may override here any of the values defined there
 % e.g.
-% \majorfield[pt]={Engenharia Biomédica}
+% \majorfield[pt]={Engenharia BiomÃ©dica}
 % \majorfield[en]={Biomedical Engineering}
 % \thesiscover[msc,front]={cover-megi-nova-ims}
 % \thesiscover[msc,front]={cover-mgi-nova-ims}
@@ -132,13 +143,13 @@
 
 % Title of the dissertation/thesis
 % USe "\\" to break the title into two or more lines
-\title{Electric Motors Predictive Maintenance using VueForge}
-\subtitle{A Machine-Driven Big Data approach}
+\title{Induction Motors' Predictive Maintenance}
+\subtitle{An Internet of Things' approach}
 
 % Autor
 % use [f] for female and [m] for male
 \authorname[m]{Tiago dos Santos}{Tiago Santos}
-\authordegree{Master of Science}
+\authordegree{Gradutate in Computer Science}
 
 % Date
 \datemonth{June}
@@ -148,7 +159,7 @@
 % Advisers
 % use "\\&" if necessary to break the lines in the apprpriate place
 % use [f] for female and [m] for male
-\adviser[f]{Jo�o Moura Pires}{Full Professor}{\\& NOVA University of Lisbon} 
+\adviser[m]{João Moura Pires}{Full Professor}{\\& NOVA University of Lisbon} 
 % you may use "\newline" to force a new line
 % \adviser[m]{John Doe Male Adviser Name}{Associate\\& Professor}{Some University Somewhere}
 % \adviser[m]{John Doe Third Adviser Name}{Associate\\& Professor}{Some University Somewhere}
@@ -156,8 +167,8 @@
 
 % Co-Advisers (maximum of 9)
 % use [f] for female and [m] for male
-\coadviser[f]{John Doe Co-Adviser Name}{Associate\\& Professor}{Faculdade de Ciências e Tecnologia\\& da Universidade Nova de Lisboa}
-% \coadviser[f]{[Nome da co-orientadora 2]}{[Profª.\ Auxiliar]}{[Universidade Nova de Lisboa]}
+\coadviser[m]{Carlos Damásio}{Associate\\& Professor}{Faculdade de Ciências e Tecnologia\\& da Universidade Nova de Lisboa}
+% \coadviser[f]{[Nome da co-orientadora 2]}{[ProfÂª.\ Auxiliar]}{[Universidade Nova de Lisboa]}
 
 
 % committee (maximum of 9 elements)
@@ -191,12 +202,13 @@
 % \quotefile{quote}		% Quote
 \abstractfile[pt]{abstract-pt}	% Abstract in Portuguese
 \abstractfile[en]{abstract-en}	% Abstract in English
-\abstractfile[fr]{abstract-fr}	% Abstract in French
 \glossaryfile{glossary}
 \acronymsfile{acronyms}
 
 % definition of the second cover, to be printed before the copyright (to serve FCSH-UNL)
 \aftercoverfile{aftercover-unl-ims}
+
+\numberwithin{equation}{subsection}
 
 
 % The Table of Contents is always printed.
@@ -207,12 +219,12 @@
 \addlisttofrontmatter{\printnoidxglossaries}	% The Glossary and List of Acrnonyms
 
 
+
 % Text chapters
 % syntax: \chapterfile{file}
-\chapterfile{chapter1}
-\chapterfile{chapter2}
-\chapterfile{chapter3}
-\chapterfile{chapter4}
+\chapterfile{chap1_Intro}
+\chapterfile{chap2_UndElectricMotors}
+\chapterfile{chap3_RelatedWork}
 
 
 % Text appendixes
