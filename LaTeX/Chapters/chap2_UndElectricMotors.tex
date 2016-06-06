@@ -17,7 +17,7 @@
 % ================
 
 
-This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase electric motor - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it's presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the lyfe cycle cost of these motors and approach the current maintenance strategies.
+This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase \acrfull{em} - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it's presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the lyfe cycle cost of these motors and approach the current maintenance strategies. The sources of the information presented in this chapter are mainly ~\cite{Helfenstein2000}, ~\cite{Alves2003}, ~\cite{Fitzgerald1985}, ~\cite{Guru2001} and ~\cite{Rashid2011}.
 
 \section{Three phase systems} % (fold)
 \label{sec:three_phase_systems}
@@ -96,7 +96,7 @@ Since the phasors have the same magnitude and are the same amount of degrees apa
 \end{equation}
 
 These phasors can be represented on a phasor diagram, as shown in figure \ref{fig:balanced_tp_phasor_domain}. This potential difference between a given point (\emph{a},\emph{b} or \emph{c}) and the neutral is called the \emph{line-to-neutral voltage}. 
-An important property of the balanced voltage phasors set is the following ~\cite[chapter 11, p.~547]{Helfenstein2000}:
+An important property of the balanced voltage phasors set is the following:
 \begin{equation} \label{eq:balanced_prop1}
 	V_{an} + V_{bn} + V_{cn} = 0
 \end{equation}
@@ -120,7 +120,7 @@ In the phasor diagram, this can be seen as the sum of two phasors representing t
 	\label{fig:line_to_line_phasors}
 \end{figure}
 
-We can obtain the set of line-to-line voltages as the following ~\cite[chapter 11, p.~548]{Helfenstein2000}:
+We can obtain the set of line-to-line voltages as the following:
 
 \begin{equation} \label{eq:balanced_tpVab}
 	V_{ab} = \sqrt{3}V_{p}\angle_{\phi+30\degree}
@@ -172,7 +172,7 @@ The phase current for $I_{ab}$ is:
 	I_{ab} = \frac{V_{ab}}{Z_{\Delta}}
 \end{equation}
 
-The $\Delta$ impedance ($Z_{\Delta}$) is three times greater than the Y impedance ($Z_{Y}$) ~\cite[chapter 11, p.~555]{Helfenstein2000}.
+The $\Delta$ impedance ($Z_{\Delta}$) is three times greater than the Y impedance ($Z_{Y}$).
 
 
 % section sec:three_phase_systems (end)
@@ -282,7 +282,7 @@ Since the velocity in which the rotor rotates is lower than the rotational veloc
 
 \subsubsection{Synchronous Speed}
 
-The Synchronous Speed is the speed at which the rotational magnetic field rotates. This speed is constant, and its given by:
+The synchronous speed is the speed at which the rotational magnetic field rotates. This speed is constant, and its given by:
 
 \begin{equation} \label{eq:synchronous_speed}
 	 n_{s} = \frac{120f}{p}(rpm)
@@ -295,9 +295,9 @@ Therefore, the max speed of an \acrshort{tpim} supplied by a 50hz power source i
 
 
 \subsubsection{Slip}
-In an induction motor, the rotors rotational speed is not equal to the synchronous speed, since rotation at synchronous speed would result in no induced rotor current. This difference between synchronous speed and rotor speed is commonly referred to as the \emph{slip} of the rotor. We can measure this split in rpm by subtracting the rotor speed to the synchronous speed, being it has follow:
+In an \acrshort{tpim}, the rotor's rotational speed is not equal to the synchronous speed, since rotation at synchronous speed would result in no induced rotor current. This difference between synchronous speed and rotor speed is commonly referred to as the \emph{slip} of the rotor. We can measure this slip in rpm by subtracting the rotor speed to the synchronous speed, being it has follow:
 
-\begin{equation} \label{eq:split}
+\begin{equation} \label{eq:slip}
 	 n_{s} - n
 \end{equation}
 
@@ -305,7 +305,7 @@ where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
 
 However, \emph{slip} is more usually expressed as a fraction of synchronous speed. The \emph{factional slip} $s$ is
 
-\begin{equation} \label{eq:perc_split}
+\begin{equation} \label{eq:perc_slip}
 	s = \frac{n_{s} - n}{n_{s}} 
 \end{equation}
 
@@ -317,7 +317,7 @@ The slip will depend of mechanical friction and the load.
 
 It is important to refer that slip is related to efficiency - the bigger the slip, the bigger the losses will be, thus lowering the motor's efficiency. The full-load slip gives an idea of the motor efficiency($\eta$), where:
 \begin{equation} \label{eq:efficiency_max}
-	\eta <= 100\% - s
+	\eta \leqslant 100\% - s
 \end{equation}
 
 The efficiency of a motor is greater the greater its power, being that the slip decreases with increasing power. Typical efficiency values for \acrshort{ims} are 80\% for 0.75kW power, 95\% for 100kW power and more than 98\% for high power motors.
@@ -341,11 +341,11 @@ When the motor operates at full-load, the generated torque is the necessary to m
 
 \subsubsection{Motor Start}
 
-At the start, the rotor is stationary ($n = 0$) and the split (equation \ref{eq:perc_split}) is 1. Then, the field produced by the rotor currents revolves at the same speed as the stator field, creating a starting torque. 
+At the start, the rotor is stationary ($n = 0$) and the slip (equation \ref{eq:perc_slip}) is 1. Then, the field produced by the rotor currents revolves at the same speed as the stator field, creating a starting torque. 
 This torque will tend to turn the rotor in the direction of rotation of the stator-inducing field. If this torque is sufficient to overcome the opposition to rotation created by the shaft load, the rotor will come up to its operating speed - as seen in figure \ref{fig:torque_speed_curve}.
 
 If an induction motor is directly switched on from the supply it takes 5 to 7 times its full load current and develops a torque which is only 1.5 to 2.5 times the full load torque. 
-This large starting current can have adverse effects to the motor (deteriorating insulation due to overheating) as well as to the electrical installation (triggering the protection device), where a large voltage drop in the line can affect the the operation of other devices connected to the same line.
+This large starting current can have adverse effects to the motor (deteriorating insulation due to overheating) as well as to the electrical installation (triggering the protection device), where a large voltage drop in the line can affect the operation of other devices connected to the same line.
 
 Therefore, various starting methods of induction motors were developed, such as:
 
@@ -365,17 +365,23 @@ Therefore, various starting methods of induction motors were developed, such as:
 
 \begin{itemize}
   \item 
-  The stator can be projected in such a way that alternating the coil's windings leads to a different number of poles. In spite of being a robust and efficient method, it has the downsides of the resulting velocities being only discrete and the stators capable of this are more expensive and complex. 
+  The stator can be projected in such a way that alternating the coil's windings leads to a different number of poles. In spite of being a robust and efficient method, it has the downsides of the resulting velocities being only discrete (as it can be infer from the equation \ref{eq:synchronous_speed}) and the stators capable of this are more expensive and complex. 
   \item 
-  \emph{Auto-Transformers} are used to help the motor start by changing the voltage. Due to the auto-transformer price, this is an expensive method.
+  It is also possible to use a variable frequency voltage device (power converter) as a voltage provider for the motor. As you can see in equation \ref{eq:synchronous_speed}, the value of the frequency will change the speed of the motor.
   \item 
-  \emph{Star-Delta Starter} is a device that initially connects the stator in Y configuration and after a certain velocity ($n$), it changes that connection to a $\Delta$ configuration, raising the voltage applied to the windings.
+  A voltage converter can also be used, ranging the magnitude of the voltage. Once the torque is proportional to the voltage, changing the voltage magnitude will change the motor speed.
   \item 
-  \emph{Power Converter} is a device that can control motor speed as well as the motor start.
+  There is also the possibility to use the last two methods - ranging the voltage frequency and ranging the voltage magnitude.
 \end{itemize}
 
 \section{Relevance and Landscape of Three Phase Induction Motors} % (fold)
 \label{sec:tpin_relevance}
+
+\acrshort{em}s are an important component of \acrshort{emfs}, which are part of the industrial equipments' great majority. Due to its characteristics, \acrshort{em}s can be found in applications as diverse as industrial fans, blowers, pumps, compressors, conveyors, lifts, households appliances, power tools, etc. 
+Such applications lead to an high consumption of electrical energy.
+
+Worldwide, \acrshort{em} are responsible for the consumption of 30-40\% of electrical energy, while in developed countries this values raises to 50-60\%, making them one of the most important electrical charges, being responsible for 13\% of $CO_{2eq}$. 
+
 \todo[inline]{Reler a parte dos tipos de motores elétricos industriais para fazer o enquadramento de onde se situa o MIs}
 Tipos de motor elétricos industriais ~\cite{Ferreira1}
 
