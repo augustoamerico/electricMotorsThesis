@@ -17,7 +17,7 @@
 % ================
 
 
-This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase \acrfull{em} - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it's presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the lyfe cycle cost of these motors and approach the current maintenance strategies. The sources of the information presented in this chapter are mainly ~\cite{Helfenstein2000}, ~\cite{Alves2003}, ~\cite{Fitzgerald1985}, ~\cite{Guru2001} and ~\cite{Rashid2011}.
+This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase \acrfull{em} - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it's presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the lyfe cycle cost of these motors and approach the current maintenance strategies. The sources of the information presented in this chapter are mainly ~\cite{Helfenstein2000}, ~\cite{Alves2003}, ~\cite{Fitzgerald1985}, ~\cite{Guru2001}, ~\cite{Rashid2011} and ~\cite{Ferreira1}.
 
 \section{Three phase systems} % (fold)
 \label{sec:three_phase_systems}
@@ -380,11 +380,26 @@ Therefore, various starting methods of induction motors were developed, such as:
 \acrshort{em}s are an important component of \acrshort{emfs}, which are part of the industrial equipments' great majority. Due to its characteristics, \acrshort{em}s can be found in applications as diverse as industrial fans, blowers, pumps, compressors, conveyors, lifts, households appliances, power tools, etc. 
 Such applications lead to an high consumption of electrical energy.
 
-Worldwide, \acrshort{em} are responsible for the consumption of 30-40\% of electrical energy, while in developed countries this values raises to 50-60\%, making them one of the most important electrical charges, being responsible for 13\% of $CO_{2eq}$. 
+Worldwide, \acrshort{em} are responsible for the consumption of 30-40\% of electrical energy, while in developed countries this values raises to 50-60\% and in europe union to 70-75\%, making them one of the most important electrical charges, being responsible for 13\% of $CO_{2eq}$. 
+Due to its relatively low price, good efficiency and high availability, \acrshort{ims}  are the most used electric motors in the market of power from 0.75KW - representing 85-90\% of the installed motors in the industry. 
 
-\todo[inline]{Reler a parte dos tipos de motores elétricos industriais para fazer o enquadramento de onde se situa o MIs}
-Tipos de motor elétricos industriais ~\cite{Ferreira1}
+Still, there are several types of electric motors in the industry. Above the 0.75KW of power, the motors normally used are \acrshort{tp} \acrshort{ac} and commutated \acrshort{dc} with \acrshort{tp} electric controllers.
+In the \acrshort{tp} \acrshort{ac} domain, in addition to \acrshort{ims}, we also have \acrfull{wrtpim}, \acrfull{wrtpim}, \acrfull{pmsm} and \acrfull{rm}. 
 
+For powers above 0.75KW, conventional \acrshort{dc} motors are bound to disappear in the industry due to its low availability and efficiency. However, in the \acrshort{dc} domain, there are two types of motors widely used - \acrfull{bldc} and \acrfull{srm}, both requiring electric controllers.
+
+Nowadays, \acrshort{ims}'s power can go to 5MW. However, most of these motors have a power ranging from 0.75KW to 375KW. 
+
+\acrshort{wrtpim} are used for power needs above 1MW, but these are being gradually replaced for \acrshort{ims} supplied by \acrfull{esv}. Since \acrshort{wrtpim} have brushes, bearings and windings in the rotor, this leads to a lower availability and an higher cost comparing to the \acrshort{ims}. This gradual change is happening to only because of this lower availability and higher cost, but also because of the advances in the  \acrfull{esv} domain, which allow changing the torque-speed curve of \acrshort{ims}.
+
+\acrshort{pmsm} are used in low-power applications (usually until 15KW), having an high efficiency curve and an excellent power factor, however needing an electric controller to operate. In spite of its power/height ratio is better than \acrshort{ims}'s, the \acrshort{pmsm} price plus the electric controller is higher than the \acrshort{ims} cost, being this the main disadvantage of \acrshort{pmsm} relatively to \acrshort{ims}- if the requirement is constant speed.
+
+\acrshort{rm} are normally used in power needs ranging from 5KW a 700KW and are an interesting technology on the efficiency/power factor point of view, being its cost higher than the \acrshort{ims}. This a disadvantage if the requirement is constant speed.
+
+\acrshort{pmsm} with squirrel-cage rotor are a promising technology that combine high efficiency and the characteristic \acrshort{pmsm} power factor, as well as line-start capability characteristic of \acrshort{ims} - removing the need of an electric controller.
+However, due to several technical problems related to the motor start and sync, there aren't commercial models available for power above 3KW - restraining this way the power of the commercialized models from 0.3KW to 3KW.
+
+Due to the previously identified points, it is concluded that the most relevant motor for the next years is the \acrshort{ims}, being this the target type motor of this thesis.
 
 \section{Three Phase Induction Motors' Maintenance and Life-cycle} % (fold)
 \label{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle}
