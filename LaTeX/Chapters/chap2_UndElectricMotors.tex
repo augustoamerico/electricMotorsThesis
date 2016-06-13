@@ -404,12 +404,115 @@ Due to the previously identified points, it is concluded that the most relevant 
 \section{Three Phase Induction Motors' Operation} % (fold)
 \label{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle}
 
-In most of the cases, the \acrshort{ims}'s \acrfull{lcc} can go up to 90\% of its exploration cost, which directly influences their performance and availability. Both of these measures can be optimized through appropriated maintenance strategies, ensuring appropriated operating conditions - including the power supply quality.
+In most of the cases, the \acrshort{ims}'s \acrfull{lcc} can go up to 90\% of its exploration cost, which directly influences their performance and availability. Both of these measures can be optimized through appropriated maintenance strategies, ensuring appropriated operating conditions and including the power supply quality. Nevertheless, motor failures or malfunctions can still occur.
 
 \subsection{Life-cycle cost}
-\subsection{Maintenance}
+
+The \acrshort{lcc} of \acrshort{em} is the cost's sum of acquisition, exploration, maintenance and shutdown, as illustrated in figure \ref{fig:lcc}. If we want to be more precise, the outage cost of a motor can also be included in its \acrshort{lcc}, due to production losses and inactive labor for example.
+
+
+From the components of the \acrshort{lcc}, the two biggest costs are the exploration cost and the maintenance cost - as shown in figure \ref{fig:costsOflcc}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=1.5in]{lcc}
+	\caption{Life Cycle cost components}
+	\label{fig:lcc}
+\end{figure}
+
+Active power has a direct influence in the contracted/taken power and peak power, which have a specific cost associated in the electric bill. Therefore, bigger efficiency means less energetic costs.
+The low motor's availability may have very significant indirect costs. When the motor fails unexpectedly, there are significant costs associated to its unplanned stop due to possible system stops, production losses, inactive labor,delivery failures and possibly lost of clients, transport of the motor to the repairer, motor repair, etc. 
+Generally, the investment in \acrshort{ims}'s efficiency, power factor and availability improvements is largely compensated by the benefits that come from it.
+ 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=2in]{costsOflcc}
+	\caption{Life Cycle costs quantity}
+	\label{fig:costsOflcc}
+\end{figure}
+
+\subsection{Maintenance Strategies}
+
+Maintenance strategies are developer in order to ensure maximum availability, efficiency, production processes' security, preserve equipments and improve the production quality. Generally, if the additional cost paid for maintenance is equal or less than the reduction in motors' exploration cost, then that investment is economically good.
+
+The motors' manufacturers typically provide a set of recommendations concerning its maintenance and conservation, where these recommendations should be followed.
+
+Nevertheless, a suited maintenance plan consists on a preventive maintenance component as well as on a predictive maintenance component.
+
+\subsubsection{Corrective Maintenance}
+
+This maintenance strategy acts when the equipment has already broke down. It focus on restoring the equipment to its normal operating condition, but it is also possible to choose to replace the motor instead of restoring the broken one. 
+
+If the repair is done, then it is also possible to apply some preventive maintenance protocols. This way, in order to avoid a new posterior motor stop, the components that are scheduled to be object of a preventive maintenance strategy are replaced.
+
+Several independent studies have shown that the \acrshort{ims} repairs leads to the efficiency reduction in 1\% to 4\%. It may also lead to an availability reduction and to the change of torque-speed curve, which degrades the motor's performance.
+
+
+\subsubsection{Risk based Maintenance}
+
+This maintenance strategy is the base maintenance procedure applied to all the motors in which the protocol may take into account the motor's lubrication, windings replacement, motor's surface cleaning and check of the electric connectors.
+
+The frequency in which this maintenance strategy is applied may vary, depending on the motor's importance in the industrial process, as well as its operation conditions - having special attention on the environment conditions like humidity, dust and temperatures.
+
+\subsubsection{Preventive Maintenance}
+
+This maintenance strategy presumes the periodic replacement of some motor's components, independently of their actual state of degradation.
+This is based on statistical analysis of components' life duration.
+
+However, since the major part of the replaced components are still in a good state, there is always a waste factor associated with this maintenance strategy to take into account. Therefore, it is acceptable that this kind of maintenance may only be applied to critical motors of the system.	
+
+
+\subsubsection{Predictive Maintenance}
+%This strategy can be viewed as a sub-area of preventive maintenance, in that some malfunctions signals may trigger some action in the motor.
+The main goal of this maintenance strategy is to provide timely malfunction signals, so that the probability of an outage may be reduced. In doing so, not only we are providing information of the motor's status, we are also reducing some malfunctions' cost. 
+If the malfunctions are detected in an early stage then the repair actions tend to be less costly, not only because it is possible to timely plan the repair, as well as the malfunction tend to stay contained to its original location, not spreading to other areas of the motor. 
+
+This strategy presents some characteristics to accomplish its goals, as for the use of non invasive techniques (so that it is not required to stop the motor) and in the attempt to eliminate corrective maintenance. 
+
+
 \subsection{Motor failures}
 
+Com que frequência falham os IMs??
+Quais as falhas e quail a distribuição de frequência das mesmas?
 
-\section{Summary} % (fold)
-\label{sec:tpem_summary}
+Relativamente à frequência, dizer que tal como dito no artigo do esa e no Induction Machine drive condition monitoring and diagnostic research, o estudo do EPRI mostra que a distribuição de frequência é a da figura \ref{fig:motorFailures} e \ref{fig:failures_frequency_epri}, mas esses valores variam de estudo para estudo. 
+Então se variam, porque é que eu escolhi a do EPRI e não a dos IEEE \ref{fig:failures_frequency_IEEE_study} ou a do B\&K \ref{fig:failures_frequency_BK_study}?
+
+The values of the figure \ref{fig:motorFailures} may vary by industry and application. For example, in the petroleum and chemical industry the bearings are responsible for 51\% of the failures.
+
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=1.8in]{motorFailures}
+	\caption{Problems in: (a) Three-Phase Induction Motors, (b) Motor Stator, and (c) Motor Rotor}
+	\label{fig:motorFailures}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3in]{Sources_im_failures}
+	\caption{Sources of induction motor failures}
+	\label{fig:Sources_im_failures}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3in]{failures_frequency_BK_study}
+	\caption{B\&K study of induction motor failures frequency}
+	\label{fig:failures_frequency_BK_study}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3in]{failures_frequency_epri}
+	\caption{EPRI study of induction motor failures frequency}
+	\label{fig:failures_frequency_epri}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[height=3in]{failures_frequency_IEEE_study}
+	\caption{IEEE study of induction motor failures frequency}
+	\label{fig:failures_frequency_IEEE_study}
+\end{figure}
