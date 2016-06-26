@@ -30,33 +30,36 @@ Looking to the landscape of \acrshort{em} types in the Industry, the most used i
 These motors have a life expectancy of 12 to 20 years, in which they are repaired typically 2 to 4 times and consume energy in such a way that its energy consumption can cost up to 200 times their startup cost - being this energy consumption the exploration cost of an \acrshort{em}. 
 Both startup cost and exploration cost are part of the \acrfull{lcc}, being the maintenance cost and the exploration cost the most expensive ones in the \acrshort{lcc} ~\cite{Ferreira1} (this subject is further discussed in section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle}). One aspect that is related to both costs is the quality of the maintenance, which is directly related to the motor's efficiency and availability. 
 
-Although the probability of breakdowns of \acrshort{em} is very low, there are constant concerns with high availability and reliability concerning the motor.
+Although the probability of breakdowns of \acrshort{em} is very low (discussed in section \ref{subsec:motor_failures}), there are constant concerns with high availability and reliability concerning the motor.
 In the production sector, if an \acrshort{em} fails unexpectedly, not only is that failure a cost, it can provoke another failure elsewhere in the  \acrshort{emfs} - or in the systems that depends of its mechanical work - and it can also mean that the whole production line will be stopped. The costs associated to these unexpected failures are called the outage costs. Then again, one aspect that can minimize these occurrences is the quality of the maintenance. Therefore, the investment in maintenance practices that improve the efficiency and availability of \acrshort{em} is very attractive to the Industry.
 
 There are maintenance practices that allow the improvement of the efficiency and availability of \acrshort{em}, like preventive maintenance and predictive maintenance. 
 Predictive Maintenance is a type of maintenance whose goal is to provide timely malfunction signals of the motors' status, minimizing the probability of an outage.  
 On the other hand, if the malfunctions are detected in an early stage then the repair actions tend to be less costly, not only because it is possible to timely plan the repair, as well as the malfunction tend to stay contained to its original location, not spreading to other areas of the motor.
 
-In an era where the \acrfull{iot} is being massively adopted by the industry and where the term \acrfull{ds} is a buzzword, comes up the possibility of having a solution that relies on a proper trained model that uses the online data provided by sensors to provide insights and answers. 
-With an infrastructure of this nature, it would be possible not only to predict failures as well as give real time insights of the \acrshort{em}' status. With this insights and predicted failures, it would led to an improvement of efficiency and availability, reduction in exploration costs, reduction in maintenance costs and a greater security in the decision-making process for maintenance.
 
-Há motores que já vêm equipados com sensores, e outros não.
-Dos sensores que já vêm equipados com sensores, essa info pode ser aproveitada para fazer um modelo.
-Para aqueles que não vêm equipados com sensores, há a opção de se instalar sensores - podendo as análises destes sensores serem intrusivas ou não intrusivas.
-Na categoria das análises não intrusivas, existe a Electrical Signature Analysis
+In the datification era where we live and the acceptance of \acrfull{iot} by the industries, there is the possibility to have a solution that relies on a proper trained model that uses the online data provided by sensors to provide insights and answers. 
+With an infrastructure of this nature, it would be possible not only to predict failures (within an confidence interval) as well as give real time insights of the \acrshort{em}' status. With this insights and predicted failures, it would led to an improvement of efficiency and availability, reduction in exploration costs, reduction in maintenance costs and a greater security in the decision-making process for maintenance.
+
+In this context, Altran has a project where the main objective is to build an assessment application for electric motors, providing insights as well as failure predictions. For this project, it is expected that Altran can arrange a partnership with Optisigma. This partnership is important since Optisigma has a device that can monitor \acrshort{em} and provide a set of useful information online to apply methods of \acrfull{esa}, which they have installed in several factories (pilot stage) - having data of these motors. Furthermore, with this partnership, it will be possible to mount an experimental test bench in which the faults can be induced so that several failures patterns can be studied.
+
+\Acrshort{esa} ~\cite{Bonaldi2012} is a general term for a set of electrical machine condition monitoring techniques through the analysis of electrical signals, making those non-intrusive techniques. This means that if a factory wants to start tracking information of a specific or several motors, it just has to add a component between the motor and the power supply.
 
 
-Guidelines:
-- Minimizar outages
-- Conseguir planear arranjos/paragens por avaria através de um modelo preditivo
-- conseguir maximixar o tempo de vida de um motor
-- conseguir aumentar a produtividade e tempo de produção de uma linha
+
+%Guidelines:
+%- Minimizar outages
+%- Conseguir planear arranjos/paragens por avaria através de um modelo preditivo
+%- conseguir maximixar o tempo de vida de um motor
+%- conseguir aumentar a produtividade e tempo de produção de uma linha
 
 % section motivation (end)
 
 
 \section{Problem} % (fold)
 \label{sec:problem}
+
+
 
 It is up to you, the student, to read the FCT and/or UNL regulations on how to format and submit your MSc or PhD dissertation.  
 
