@@ -58,10 +58,10 @@ The voltage phases of figure \ref{fig:balanced_tp_time_domain} can be expressed 
 \begin{equation} \label{eq:balanced_tpVan_timedomain}
 	V_{an}(t) = V_{m}\sqrt{2}\cos{\omega t} V
 \end{equation}
-\begin{equation} \label{eq:balanced_tpVan_timedomain}
+\begin{equation} \label{eq:balanced_tpVbn_timedomain}
 	V_{bn}(t) = V_{m}\sqrt{2}\cos{\omega t - 120\degree} V
 \end{equation}
-\begin{equation} \label{eq:balanced_tpVan_timedomain}
+\begin{equation} \label{eq:balanced_tpVcn_timedomain}
 	V_{cn}(t) = V_{m}\sqrt{2}\cos{\omega t - 240\degree} V
 \end{equation}
 
@@ -195,7 +195,7 @@ These motors are  globally the most used, since they have several advantages ove
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[height=2in]{ims}
-	\caption{\acrfull{ims}}
+	\caption{\Acrlong{ims}}
 	\label{fig:ims}
 \end{figure}
 
@@ -311,7 +311,7 @@ However, \emph{slip} is more usually expressed as a fraction of synchronous spee
 
 where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
 
-The slip will depend of mechanical friction and the load.
+The slip will depend of mechanical friction and the load. It is important to remember that the inductive reactance will depend on the speed difference between the inductor (stator) and the induced (rotor), and the bigger the difference then the bigger will be the inductive reactance. Therefore, the bigger the slip, the bigger will be the consumed current.
 
 \subsubsection{Efficiency and Losses}
 
@@ -325,7 +325,7 @@ The efficiency of a motor is greater the greater its power, being that the slip 
 \subsubsection{Torque}
 
 The full-load torque of the motor can be known if the power and full-load speed are known, by the following expression:
-\begin{equation} \label{eq:efficiency_max}
+\begin{equation} \label{eq:torque}
 	T = \frac{P}{n}\times 9550
 \end{equation}
 where $T$ is measured in Newton.Meter (N.m), $P$ is power and is measured in KiloWatt (KW) and $n$ is the rotor speed and is measured in rpm.
@@ -479,39 +479,68 @@ This strategy presents some characteristics to accomplish its goals, as for the 
 \subsection{Motor failures}
 \label{subsec:motor_failures}
 
-Over the years, several surveys (~\cite{Bonnett2010}, ~\cite{Thorsen1995}, ~\cite{Mccoy1986}, ~\cite{Bonnett1992}) have been made targeting the failure analysis of induction motors, leading to similar values in the principal fault's categories and a better understanding about the failure's root.
+Over the years, several surveys (~\cite{Bonnett2010}, ~\cite{Thorsen1995}, ~\cite{Mccoy1986}, ~\cite{Bonnett1992}) have been made targeting the failure analysis of induction motors (small, medium and large), leading to similar values in the principal fault's categories and a better understanding about the failure's root.
 
-In spite of the variety of sources of machine faults (figure \ref{fig:Sources_im_failures}), these studies have converge in the main sources of failures and shown similar values about the frequency in which they happen, as shown in table \ref{tab:failure_distribution}. A drilled down distribution can be seen in the figure \ref{fig:motorFailures} according to ~\cite{Mccoy1986}.
+In spite of the variety of sources of machine faults (figure \ref{fig:Sources_im_failures}), these studies have converge in the main sources of failures and shown similar values about the frequency in which they happen, as shown in table \ref{tab:failure_distribution}. A drilled down distribution can be seen in the table \ref{tab:failure_distribution_drilldown} according to ~\cite{Mccoy1986}.
 
-These same studies also show that the failure distribution varies within industries and application - since ~\cite{Bonnett2010} and ~\cite{Thorsen1995} target machines petrochemic and oil industry, and ~\cite{Mccoy1986} targets utility applications.
+These same studies also show that the failure distribution varies within industries, application and power category - since ~\cite{Bonnett2010} and ~\cite{Thorsen1995} target machines in the petrochemic and oil industry, and ~\cite{Mccoy1986} targets machines in utility applications.
 
 
 In these same studies it was also determined that a given population of motors had an average failure rate of 0.0708 failures per unit, per year (FPU) for general industry ~\cite{Reliability1987} and 0.035 FPU for maintenance-intensive industries such as utilities ~\cite{Mccoy1986}.
 
 \begin{table}[]
 \centering
-\caption{My caption}
+\caption{Failure Category Distribution}
 \label{tab:failure_distribution}
 \begin{tabular}{ccccc}
 \multicolumn{1}{c}{\textbf{}} & \multicolumn{1}{c}{\textbf{\% Bearings}} & \multicolumn{1}{c}{\textbf{\% Stator}} & \multicolumn{1}{c}{\textbf{\% Rotor}} & \multicolumn{1}{c}{\textbf{\% Others}}  \\
 ~\cite{Bonnett2010}  & 51 & 16 & 7 & 26 \\ 
 ~\cite{Thorsen1995}  & 51 & 16 & 7 & 26 \\
-~\cite{Mccoy1986} 	 & 41 & 37 & 10 & 12 \\
+~\cite{Mccoy1986} 	 & 41 & 36 & 9 & 14 \\
 ~\cite{Bonnett1992}  & 41 & 37 & 10 & 12 \\                              
 \end{tabular}
 \end{table}
 
 
+%\todo[inline]{Ter a figura ou ter as tabelas?}
+
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[height=3in]{Sources_im_failures}
+	\includegraphics[width=\textwidth ]{Sources_im_failures}
 	\caption{Sources of induction motor failures}
 	\label{fig:Sources_im_failures}
 \end{figure}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[height=1.8in]{motorFailures}
-	\caption{Problems in: (a) Three-Phase Induction Motors, (b) Motor Stator, and (c) Motor Rotor}
-	\label{fig:motorFailures}
-\end{figure}
+\begin{table}[htbp]
+\caption{Failure Category Distribution Drilldown}
+\label{tab:failure_distribution_drilldown}
+\begin{tabular}{cc}
+\multicolumn{1}{c}{\textbf{Bearings Related}} & \multicolumn{1}{c}{\textbf{41\%}} \\
+Sleeve Bearings & 14\% \\
+Anti-Friction Bearings  & 9\% \\
+Oil Leaks & 6\% \\
+Thrust Bearing & 5\% \\
+Bearing seals & 3\% \\
+Oil System & 1\% \\
+Other & 3\%
+\end{tabular}
+\begin{tabular}{cc}
+\multicolumn{1}{c}{\textbf{Stator Related}} & \multicolumn{1}{c}{\textbf{36\%}} \\
+Grounding Insulation & 22\% \\
+Turn Insulation  & 4\% \\
+Bracing & 3\% \\
+Wedges & 1\% \\
+Frame & 1\% \\
+Cable & 1\% \\
+Connections & 1\% \\
+Other & 3\%
+\end{tabular}
+\begin{tabular}{cc}
+\multicolumn{1}{c}{\textbf{Rotor Related}} & \multicolumn{1}{c}{\textbf{9\%}} \\
+Cage & 4\% \\
+Shaft  & 2\% \\
+Core & 1\% \\
+Balance Weight & 1\% \\
+Other & 1\%
+\end{tabular}
+\end{table}
