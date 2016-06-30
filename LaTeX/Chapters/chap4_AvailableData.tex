@@ -25,7 +25,7 @@ As off the time this document is being written, the Business Understanding phase
 
 
 
-\section{\Acrlong{crispdm}} % (fold)
+\section{Cross Industry Standard Process for Data Mining} % (fold)
 \label{sec:crispdm}
 
 \Acrfull{crispdm} is an iterative data mining process model that describes commonly used approaches that data mining experts use to tackle problems, which was developed by analysts representing Daimler-Chrysler, SPSS, and NCR. \Acrshort{crispdm} provides a nonproprietary and freely available standard process for fitting data mining into the general problem-solving strategy of a business or research unit.
@@ -42,23 +42,64 @@ The iterative nature of \Acrshort{crispdm} provides a continuous approach for ca
 	\label{fig:crispdm}
 \end{figure}
 
-\subsection{\Acrshort{crispdm} phases}
-\label{sec:crispdm_phases}
+\subsection{CRISP-DM phases}
+\label{subsec:crispdm_phases}
 
 \subsubsection{Business/Research Understanding}
+\label{subsubsec:business_understanding}
+
+This initial phase focuses on clearly enunciate the project objectives and requirements in terms of the business or research unit as a whole. Then, it is necessary to convert this knowledge into a data mining problem definition, so that a preliminary strategy is made for achieving these objectives.
 
 \subsubsection{Data Understanding}
 
+This phase starts with the collection of the data to proceed with activities in order to get familiar with the data. The next step is evaluate the quality of the data and get the firsts insights. Finally, if desired, interesting subsets can be selected that may contain actionable patterns to form hypotheses for hidden information.
+
 \subsubsection{Data Preparation}
+
+This labor-intensive phase covers all aspects of preparing the final data set, which shall be used for subsequent phases, from the initial raw data. Data preparation tasks are prone to be performed multiple times, and not in any prescribed order. Tasks include selecting cases and variables to analyse, perform transformations on certain variables, and clean the raw data so that it is ready for the modeling tools.
 
 \subsubsection{Modeling}
 
+In this phase, the goal is to select and apply appropriate modeling techniques for further parameters' calibration to optimal value. Typically, several techniques may be applied for the same data mining problem. Some techniques have specific requirements on the form of data. Therefore, looping back to data preparation phase is often required.
+
 \subsubsection{Evaluation}
+
+At this stage in the project you have built a model (or models) that were delivered from Modeling phase. These models must be evaluated for quality and effectiveness, before they can be deploy for use in the field.
+Before the deployment, it is also necessary to determine whether the model in fact achieves the objectives set for it in phase \ref{subsubsec:business_understanding}. Another key objective in this phase is to establish whether some important business issue has not been sufficiently accounted for. At the end of this phase, a decision on the use of the data mining results should be reached.
 
 \subsubsection{Deployment}
 
+Although this is the last phase, the creation of the model is generally not the end of the project. Depending on the requirements, the deploy can be as simple as generating a report or as complex as implementing a repeatable data scoring or data mining process. For businesses, the customer often carries out the deployment based on the analyst model.
+
+
 \section{Work Plan} % (fold)
 \label{sec:work_plan}
+
+According to the CRISP-DM methodology, the first phase of this dissertation consisted on the study of three phase systems and \acrshort{ims}, as well as understanding the several problems that affect them. The output of this phase consist on a document where the basis of three phase systems from the perspective of a Computer Scientist can be learned and on the problem definition which this dissertation is approaching. The next steps consist on data preparation and modeling, where an iterative approach is done by interweaving the study of Signal Processing (\ref{subsec:data_prep_studying_signal}) and Machine Learning techniques (\ref{subsec:modeling_under_machine_learning}). 
+After the experience and knowledge acquired through phase \ref{subsec:data_prep_studying_signal} and \ref{subsec:modeling_under_machine_learning} , an evaluation of the most promising models will be made. At this point, the process may be iterated but a prototype is expected as a result of this dissertation work.
+
+
+\subsection{Understanding Induction Motors}
+
+A focused output of this phase is summarise on chapter \ref{cha:intro_electric_motors}, where an understanding of the target motor in this dissertation can be found. A more complete output of this phase can be found on a future appendix of this document.
+
+
+\subsection{Data Understanding}
+
+At the moment, two datasets are available. One of the datasets can't be used since the sample rate of the metrics is too big to detected small fluctuations on the current to detect inter-turn short circuit between a low number of turn.
+The sample frequency of the other dataset is appropriate to detect such fluctuations, but the sample period is merely during 4 seconds and therefore doesn't have statical relevance on the lifetime of the motor. Still, this dataset is useful to understand the data as well as to understand the transformation that can be applied to get more insights.
+It is expected that more data will be collected from several motors starting September. A more detailed section on this subject can be found on \ref{sec:available_data}. 
+
+\subsection{Data Preparation: Understanding Signal Processing}
+\label{subsec:data_prep_studying_signal}
+
+\subsection{Modeling: Understanding Machine Learning Techniques}
+\label{subsec:modeling_under_machine_learning}
+
+\subsection{Understanding Induction Motors}
+
+
+
 
 \section{Available Data}
 \label{sec:available_data}
