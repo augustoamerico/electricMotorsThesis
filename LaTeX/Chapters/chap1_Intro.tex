@@ -64,7 +64,7 @@ As stated in section \ref{subsec:motor_failures}, bearing faults account for mos
 
 The next greater source of faults are the stator winding short-circuits (referred in section \ref{subsec:motor_failures} as turn insulation and grounding insulation). These faults can form 26\% of the faults occurring in electrical machines (refereed in page \pageref{tab:failure_distribution_drilldown} table \ref{tab:failure_distribution_drilldown}), and in small machines can go up to 90\% ~\cite{Riera-Guasp2015}. These faults are typically the final result of the winding insulation's aging. An aged winding can locally fail due to a small stress, generating an interturn short-circuit - thus permitting fault current to circulate through the short-circuited turns. This fault creates a thermal effect that leads to a progressive degradation of the affected turns' insulation and its neighboring turns. These events' course lead to a progressive spread of the fault, increasing fault's current and even to an insulation fault of another phase. The insulation fault on a phase can lead to a phase-to-phase or phase-to-ground failure ~\cite{Riera-Guasp2015}. These kind of failures demand for timely appropriated measures that must be detected very quickly for any practical use, when the fault current remains low or before the conventional protection systems (overcurrent or differential relays) act ~\cite{Riera-Guasp2015}.
 
-For the presented reasons, the problem this dissertation proposes to solve is the timely detection of turn insulation faults in \acrlongpl{ims}.
+For the presented reasons, the problem this dissertation proposes to solve is the timely detection of turn insulation faults in \acrlongpl{ims} using the current signature.
 
 
 
@@ -73,19 +73,51 @@ For the presented reasons, the problem this dissertation proposes to solve is th
 \section{Proposed Approach} % (fold)
 \label{sec:proposed_approach}
 
-This dissertation will follow the \acrlong{crispdm} methodology (discussed in section bla), where the business understanding phase's output is presented in the chapter \ref{cha:intro_electric_motors}.
+This dissertation will follow the \acrlong{crispdm} methodology (discussed in section \ref{sec:crispdm}), where the first phase of these dissertation was the study of three phase induction motors and related problems, so that one of the could be chosen and further study. 
 
-Regarding this kind of failures, there are a set of works where \Acrshort{esa} techniques are used to detect short-circuited faults ~\cite{Ourici2012} ~\cite{Cheng2011} ~\cite{Joksimovic2013} ~\cite{Cruz2001} ~\cite{Cabanas2013} ~\cite{Gandhi2011} ~\cite{Kia2013} ~\cite{M.a2014} ~\cite{Bouzid2013} ~\cite{Bakhri2012} ~\cite{Bakhri2012}.
+Regarding this kind of failures, there are a set of works where \Acrshort{esa} techniques are used with other conventional techniques to detect short-circuited faults ~\cite{Ourici2012} ~\cite{Cheng2011} ~\cite{Joksimovic2013} ~\cite{Cruz2001} ~\cite{Cabanas2013} ~\cite{Gandhi2011} ~\cite{Kia2013} ~\cite{M.a2014} ~\cite{Bouzid2013} ~\cite{Bakhri2012} ~\cite{Bakhri2012}, and another set that uses machine learning to detect short-circuited as well as other faults ~\cite{Toma2011} ~\cite{Wolkiewicz2013} ~\cite{Patel2016} ~\cite{Jagadanand2015}.
+
+The data understanding will be followed by an iterative study of signal processing, data stream methods and machine learning techniques, so that features can be derived and models can be compared.
+After the evaluation phase of the most promising models, the process may be re-iterated. Still, a prototype is expected as a result of this dissertation.
+
+A complete description on the approach can be found in chapter \ref{cha:available_data}.
+
 
 
 % section electric_motors_basics (end)
 
 
 
-
-\section{Contributions} % (fold)
+\section{Goals and Expected Contributions} % (fold)
 \label{sec:contributions}
+
+The goals of this dissertation are to search related work, search related techniques, implement and compare a set of machine learning techniques with the reported in literature and as a final result a prototype of an online  near real-time stream system to detect turn insulation faults is expected.
+
+It is expected that this goals bring the following contributions:
+
+\todo[inline]{pedir ao antóino o paper do SFFT}
+
+\begin{itemize}
+  \item 
+  Develop a model that can detect early inter-turn short circuited faults, as well as other short-circuited faults, through the stator current
+  \item 
+  Compare several transforms and signal processing techniques, being one of them a the sparse fast Fourier transform - which was not found to be used in the literature for this context
+  \item 
+  Compare the quality of fault detection of several frequency resolution
+  \item 
+  Identify the machine learning techniques which provide better results for online near real-time detection of turn insulation faults
+  \item 
+  A technique that improve the monitoring process, improving the reliability of the low power \acrshort{ims}
+\end{itemize}
+
 
 \section{Outline} % (fold)
 \label{sec:outline}
 
+The rest of the document is organized as follows:
+
+\textbf{Chapter} \ref{cha:intro_electric_motors}
+
+\textbf{Chapter} \ref{cha:state_of_the_art}
+
+\textbf{Chapter} \ref{cha:available_data}
