@@ -91,9 +91,11 @@ It is expected that more data will be collected from several motors starting Sep
 \subsection{Data Preparation: Understanding Signal Processing}
 \label{subsec:data_prep_studying_signal}
 
-This phase will proceed in parallel with phase \ref{subsec:modeling_under_machine_learning}. Given the features available in the raw data, it is necessary to derive another set of features so that the differences between healthy stream data and faulty stream data can be found. Since the data is the representation of several signals (voltage and current), emerges the necessity to study several techniques to analysis this kind of data. For this purpose, a set of Signal Processing techniques will be study such as Fourier Analysis, several transforms (Hilbert, Laplace, Z, Fourier), as well as several signal filters.
-The transform to study where chosen given its use in several relevant works ~\cite{M.a2014} ~\cite{Riera-Guasp2015} ~\cite{Cheng2011} and its relevance in the classical signal processing.
-The goal is to try some features addition on the data and test some modeling techniques, while studying a specific signal processing technique and data streaming methods.
+This phase will proceed in parallel with phase \ref{subsec:modeling_under_machine_learning}. Given the features available in the raw data, it is necessary to derive another set of features so that the differences between healthy stream data and faulty stream data can be found. Since the data is the representation of several signals (voltage and current), emerges the necessity to study several techniques to analysis this kind of data. For this purpose, a set of Signal Processing techniques will be study such as Fourier Analysis, several transforms (Hilbert, Wavelet, Z, Fourier), as well as several signal filters.
+The transforms to study where chosen given its use in several relevant works ~\cite{M.a2014} ~\cite{Riera-Guasp2015} ~\cite{Cheng2011} and its relevance in the classical signal processing.
+The goal is to experiment some features addition on the data and test some modeling techniques, while studying a specific signal processing technique and data streaming methods.
+
+At the moment, it's still uncertain what is the best way to obtain the signal (all the points sampled over a reasonable period of time, root mean square over a reasonable period of time, what is the most reasonable sample frequency to detect the failures in near real time) and what's the best way to transform the signal (Park-Hilbert transformation, fast Fourier transformation, sparse fast Fourier transformation or wavelet transformation).
 
 
 \subsection{Modeling: Understanding Machine Learning Techniques}
@@ -103,10 +105,11 @@ This phase will proceed in parallel with phase \ref{subsec:data_prep_studying_si
 Other techniques that will be studied are Clustering techniques.
 
 \subsubsection{Artificial Neural Networks}
+\label{subsec:ann}
 
-Artificial neural networks (ANN) are classifiers inspired by Biology. As all kind of classifiers, an ANN goal is to maximize the likelihood for the predicted result of a given input to be as close as possible of the real result. This goal is accomplished by training the ANN , which will adapt the consideration of the input against the expected result of that input. This classifier provides a general method for learning functions from examples, being the examples real-valued, discrete-valued, or vector-valued.
+\Acrfullpl{ann} are classifiers inspired by Biology. As all kind of classifiers, an \Acrshort{ann} goal is to maximize the likelihood for the predicted result of a given input to be as close as possible of the real result. This goal is accomplished by training the \Acrshort{ann} , which will adapt the consideration of the input against the expected result of that input. This classifier provides a general method for learning functions from examples, being the examples real-valued, discrete-valued, or vector-valued.
 
-ANN are composed by perceptrons, which are units that take a vector of real-valued inputs, calculates a linear combination of these inputs, and then computes a function which will give the result, as seen in figure \ref{fig:sigmoid_unit}.
+\Acrshort{ann} are composed by perceptrons, which are units that take a vector of real-valued inputs, calculates a linear combination of these inputs, and then computes a function which will give the result, as seen in figure \ref{fig:sigmoid_unit}.
 
 \begin{figure}[htpb]
 \centering
@@ -125,6 +128,21 @@ Each perceptron have a linear combination so that a value may be produced from t
 After the perceptron computes the linear combination, this value is applied to a function which will give us the class. For example, in a binary classification problem, the activation function can be the Logistic Function - also called sigmoid function.
 
 \subsubsection{Support Vector Machine}
+\label{subsec:svm}
+
+\Acrfull{svm} is a supervised machine learning algorithm that can be used for classification and regression problems. In a binary classification context, this technique requires a labeled data set of training examples so that it can build a model that assigns new examples into one category or the other, making it a non-probabilistic binary linear classifier.
+Given that training set, the \Acrshort{svm} defines the criterion to be looking for a decision surface that is maximally far away from any data point, which can be viewed in figure \ref{fig:svm_margin}. 
+
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{Svm_max_sep_hyperplane_with_margin.png}
+\caption{Margins for an SVM trained with samples from two classes}
+\label{fig:svm_margin}
+\end{figure}
+
+This distance from the decision surface to the closest data point determines the margin of the classifier.
+
+Therefore, the decision function for an \Acrshort{svm} is fully specified by a (usually small) subset of the data which defines the position of the separator, which can be seen in figure \ref{fig:svm_margin}. These points are referred to as the support vectors. They are called vectors because in a vector space, a point can be thought of as a vector between the origin and that point.
 
 \subsection{New dataset acquisition and Modeling re-iteration}
 \label{subsec:reiteration}
@@ -134,3 +152,63 @@ The new dataset will have a superset of the currently working dataset's features
 
 \section{Available Data}
 \label{sec:available_data}
+
+As off the day of this document's writing, the available data can be divided into two categories: an unlabeled dataset containing the current, voltage and power logs of a factory's motor (data category 1) and a dataset labeled containing 3 sets of data - healthy motor, faulty motor and a more severe faulty motor (data category 2).
+It is expected another set of data from several machines with turn insulation faults to arrive by September (data category 3).
+The following is a summary of the two categories of data, as well as the expected data (\ref{subsec:data_category_3})
+
+\subsection{Data Category 1}
+\label{subsec:data_category_1}
+
+This data was provided by Optisigma from one of its pilots. Each tuple in this dataset contains the timestamp, root mean square of the last 30 seconds of the voltage per phase and the  current per phase. It also contains the mean power per phase, the connection type of the motor in that time period and the mean temperature.
+The provided data begins at \emph{03/02/2016  10:12:40} and ends at \emph{09/06/2016  18:05:22}.
+In spite of having a good time period of data, the data is unlabeled and we cannot know if there was any kind of fault at a given time since it was not being registered by the company.
+Furthermore, given the sample difference being of 30 seconds we cannot study neither the spectrum of the current neither the current over time.
+
+From this iteration, Optisigma was informed that the available data could not be used for the purpose of this dissertation.
+Therefore, it was provided another dataset (\ref{subsec:data_category_2}) so that an analysis could be made in order to understand not only the data and the conventional signal processing techniques, as well as determinate at which frequency the samples of the current and voltage should be made.
+
+\subsection{Data Category 2}
+\label{subsec:data_category_2}
+
+This data was provided so that the conventional signal processing techniques could be study, as well as to apply other techniques that could identify the fault. This data is composed by three datasets:
+
+\begin{itemize}
+  \item 
+  Dataset of a healthy motor, sampled at 18kHz during 4 seconds
+  \item 
+  Dataset of a faulty motor with 2 short circuited turns, sampled at 18kHz during 4 seconds
+  \item 
+  Dataset of a faulty motor with 19 short circuited turns, sampled at 18kHz during 4 seconds
+\end{itemize}
+
+In all the datasets, the used motor is the same.
+
+All the datasets have the same set of features:  \textbf{time}, \textbf{current phase R}, \textbf{current phase S}, \textbf{current phase T}, \textbf{voltage RS} and \textbf{voltage ST}. A summary of the features is shown in table bla
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htpb]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+\textbf{Feature} & \textbf{Unit} &                                                   \textbf{Data Category 2 features' description} \\ \midrule
+current phase R  & Ampere        & Stator line current of phase R                    \\
+current phase S  & Ampere        & Stator line current of phase S                    \\
+current phase T  & Ampere        & Stator line current of phase T                    \\
+voltage RS       & Volt          & Stator line-to-line voltage between phase R and S \\
+voltage ST       & Volt          & Stator line-to-line voltage between phase S and T \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+From the line-to-line voltage presented on the data, the third line-to-line voltage voltage (voltage TR) can be inferred - since it is a balanced three-phase system, the sum of the three phases has to be approximately zero. And from the line-to-line voltage, the line-to-neutral per phase voltage can be inferred.
+
+For online signal processing, sampling with 18kHz is too high since it then brings computational complexity and such a sampling rate brings noise to the sampled signal. Therefore, a first re-sample of the data was made to reduce the sampling frequency to 1kHz. The sampling frequency will influence the max frequency that we can address on the spectrum analysis as well as the step of the analysed frequencies.
+
+\subsection{Data Category 3}
+\label{subsec:data_category_3}
+
+It is expected of this data to have a similar schema as the data in \ref{subsec:data_category_2}, and the sample frequency will depend on the analysis of the data category refered in \ref{subsec:data_category_2}. This data is expected to be from several motors with several short circuited inter-turns, so that a more robust model could be made.

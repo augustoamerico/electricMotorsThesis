@@ -95,19 +95,16 @@ The goals of this dissertation are to search related work, search related techni
 
 It is expected that this goals bring the following contributions:
 
-\todo[inline]{pedir ao antóino o paper do SFFT}
 
 \begin{itemize}
   \item 
   Develop a model that can detect early inter-turn short circuited faults, as well as other short-circuited faults, through the stator current
   \item 
-  Compare several transforms and signal processing techniques, being one of them a the sparse fast Fourier transform - which was not found to be used in the literature for this context
+  Compare several transforms and signal processing techniques, being one of them the sparse fast Fourier transform  ~\cite{Indyk2014} - which was not found to be used in the literature in the dissertation's context but was found in another context showing that it is possible to reconstruct a sparse signal without sampling it at the Nyquist rate ~\cite{Hassanieh2014}
   \item 
   Compare the quality of fault detection of several frequency resolution
   \item 
   Identify the machine learning techniques which provide better results for online near real-time detection of turn insulation faults
-  \item 
-  A technique that improve the monitoring process, improving the reliability of the low power \acrshort{ims}
 \end{itemize}
 
 
@@ -116,8 +113,8 @@ It is expected that this goals bring the following contributions:
 
 The rest of the document is organized as follows:
 
-\textbf{Chapter} \ref{cha:intro_electric_motors}
+\textbf{Chapter} \ref{cha:intro_electric_motors} presents the basics concepts when addressing three phase induction motors, covering three phase circuits, working principle of induction motors and common failures.
 
-\textbf{Chapter} \ref{cha:state_of_the_art}
+\textbf{Chapter} \ref{cha:state_of_the_art} presents conventional methods used on turn insulation fault detection as well as other methods where machine learning have been used.
 
-\textbf{Chapter} \ref{cha:available_data}
+\textbf{Chapter} \ref{cha:available_data} presents the work plan for this dissertation following the \acrshort{crisp} methodology, as well as a summary on the available data.
