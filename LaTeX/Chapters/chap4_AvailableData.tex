@@ -101,46 +101,6 @@ At the moment, it's still uncertain what is the best way to obtain the signal (a
 This phase will proceed in parallel with phase \ref{subsec:data_prep_studying_signal}. As an result of the state of the art's study, several works use Artificial Neural Networks and Support Vector Machines to detect faults ~\cite{Toma2011} ~\cite{Wolkiewicz2013} ~\cite{Patel2016} ~\cite{Jagadanand2015}. Therefore, these machine learning techniques will be study for further modeling. While developing the models, they will also be evaluated and compared with each others.  
 Other techniques that will be studied are Clustering techniques.
 
-\subsubsection{Artificial Neural Networks}
-\label{subsec:ann}
-
-\Acrfullpl{ann} are classifiers inspired by Biology. As all kind of classifiers, an \Acrshort{ann} goal is to maximize the likelihood for the predicted result of a given input to be as close as possible of the real result. This goal is accomplished by training the \Acrshort{ann} , which will adapt the consideration of the input against the expected result of that input. This classifier provides a general method for learning functions from examples, being the examples real-valued, discrete-valued, or vector-valued.
-
-\Acrshort{ann} are composed by perceptrons, which are units that take a vector of real-valued inputs, calculates a linear combination of these inputs, and then computes a function which will give the result, as seen in figure \ref{fig:sigmoid_unit}.
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=0.5\textwidth]{sigmoidunit.png}
-\caption{A perception unit with sigmoid activation function}
-\label{fig:sigmoid_unit}
-\end{figure}
-
-Each perceptron have a linear combination so that a value may be produced from the input vector. from figure \ref{fig:sigmoid_unit}, it can be seen that each input has its own height. So, for example, a simple linear combination could be such as the equation \ref{eq:linear_combination}.
-
-\begin{equation} 
-\label{eq:linear_combination}
-\sum_{i=1}^{n} w_{i}*x_{i}
-\end{equation}
-
-After the perceptron computes the linear combination, this value is applied to a function which will give us the class. For example, in a binary classification problem, the activation function can be the Logistic Function - also called sigmoid function.
-
-\subsubsection{Support Vector Machine}
-\label{subsec:svm}
-
-\Acrfull{svm} is a supervised machine learning algorithm that can be used for classification and regression problems. In a binary classification context, this technique requires a labeled data set of training examples so that it can build a model that assigns new examples into one category or the other, making it a non-probabilistic binary linear classifier.
-Given that training set, the \Acrshort{svm} defines the criterion to be looking for a decision surface that is maximally far away from any data point, which can be viewed in figure \ref{fig:svm_margin}. 
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=0.5\textwidth]{Svm_max_sep_hyperplane_with_margin.png}
-\caption{Margins for an SVM trained with samples from two classes}
-\label{fig:svm_margin}
-\end{figure}
-
-This distance from the decision surface to the closest data point determines the margin of the classifier.
-
-Therefore, the decision function for an \Acrshort{svm} is fully specified by a (usually small) subset of the data which defines the position of the separator, which can be seen in figure \ref{fig:svm_margin}. These points are referred to as the support vectors. They are called vectors because in a vector space, a point can be thought of as a vector between the origin and that point.
-
 \subsection{New dataset acquisition and Modeling re-iteration}
 \label{subsec:reiteration}
 
