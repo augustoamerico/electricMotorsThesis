@@ -124,10 +124,10 @@ The Park's Vector analysis consists in the transformation of the stator currents
     i_D = (\frac{\sqrt{6}}{2})i_M sin(\omega t - \frac{\pi}{2})
 \end{equation}
  
-where
-    $i_M$ is the maximum value of the current positive sequence (A)
-    $\omega$ is the angular supply frequency (rad/s)
-    $t$ is the time variable (s)
+\noindent where
+    $i_M$ is the maximum value of the current positive sequence (A),
+    $\omega$ is the angular supply frequency (rad/s),
+    and $t$ is the time variable (s)
 
 The corresponding representation is a perfect circle, as shown in figure \ref{fig:park_vector_circle} (a).
 Although, under fault conditions, equations \ref{eq:parks_vector_d_ideal_cond} and \ref{eq:parks_vector_q_ideal_cond} are not valid. since the motor supply current will contain other components besides the positive-sequence component, leading to a representation as shown in figure \ref{fig:park_vector_circle} (b).
@@ -143,7 +143,7 @@ Although, under fault conditions, equations \ref{eq:parks_vector_d_ideal_cond} a
 \end{figure}
  
  
- The extended Park's vector approach is a simple and efficient diagnosis method based on the spectral analysis of Park's vector modulus (PVM) which is computed as:
+ The \acrfull{epva} is a simple and efficient diagnosis method based on the spectral analysis of Park's vector modulus (PVM) which is computed as:
  
 \begin{equation} \label{eq:parks_vector_modulus}
     PVM = \sqrt{(i_d^2 + i_q^2)}
@@ -157,9 +157,36 @@ This techniques was used to detect stator winding faults in operating \acrshort{
 \subsection{Park-Hilbert Method} % (fold)
 \label{subsec:park_hilbert_method}
 
-Detection of inter-turn short-circuit in induction motors using Park-Hilbert method ~\cite{Kia2013}
+This method starts by applying the \acrfull{ht} to the three phase currents, resulting in an analytical signal. From this analytical signal, the extended park's vector analysis is computed, resulting in the Park's vector modulus. At this point, a new generated signal arises called \acrfull{pvmph}.
+This method is based on spectral analysis, by applying the \acrshort{fft} to the \acrshort{pvmph} signal.
 
+The \acrshort{ht} is a signal analysis method frequently used in diverse scientific fields. Mathematically, the \acrshort{ht} of a real signal $x(t)$ (like the phase current) can be defined as the time domain convolution of $x(t)$ with $\frac{1}{t}$ and can accentuate the local properties of the real signal as follows:
 
+\begin{equation} \label{eq:convolution_signal_ht}
+    y(t) = HT{x(t)} = \frac{1}{\pi t} \ast x(t) = \frac{1}{\pi} \int_{- \infty}^{\infty} \frac{x(\tau)}{\tau - t} d \tau 
+\end{equation}
+
+The analytical signal $ \bar{x}(t) $ is obtained by coupling $x(t)$ with its \acrshort{ht} as follows;
+
+\begin{equation} \label{eq:analytical_function}
+    \bar{x}(t) = x(t) + jy(t) = a(t)e^{j\theta (t)}
+\end{equation}
+
+\noindent with
+
+\begin{equation} \label{eq:analytical_function_a}
+    a(t) = \sqrt{2}{ [ x^2(t) + y^2(t) ]}
+\end{equation}
+
+\begin{equation} \label{eq:analytical_function_a}
+    \theta(t) = arctan\left (\frac{x(t)}{y(t)} \right)
+\end{equation}
+
+where $a(t)$ is the instantaneous amplitude of the $\bar{x}(t)$, and $\theta(t)$ is the instantaneous phase of the $\bar{x}(t)$.
+
+With this transformation, it is possible to study the changes that happen on both amplitude and phase (independently) of any signal acquired from the machine.
+
+In ~\cite{Kia2013}, the authors state that this techniques allows to suppress the fundamental frequency component and to work only with failure frequencies, making it easier to the fault detection process. In the same work, it is also state that this technique  sensitive to winding faults. Compared with \acrshort{mcsa} and \acrshort{epva}, ~\cite{Kia2013} proves that the \acrshort{pvmph} is more sensitive to the occurrence of an incipient shorted turns.
 
 \subsection{Resolution and Fast Response} % (fold)
 \label{subsec:resolution_fast_response}
@@ -201,6 +228,9 @@ For example, if the \Acrshort{ann} is composed by only one perceptron, after it 
 Park ’ s Vector Approach to detect an inter turn stator fault in a doubly fed induction machine by a neural network
 
 
+Recent Advances in Modeling and Online Detection of Stator Interturn Faults in Electrical Motors
+
+
 \subsection{Support Vector Machine} % (fold)
 \label{sec:svm}
 
@@ -218,18 +248,21 @@ This distance from the decision surface to the closest data point determines the
 
 Therefore, the decision function for an \Acrshort{svm} is fully specified by a (usually small) subset of the data which defines the position of the separator, which can be seen in figure \ref{fig:svm_margin}. These points are referred to as the support vectors. They are called vectors because in a vector space, a point can be thought of as a vector between the origin and that point.
 
+
+In ~\cite{Jagadanand2015}, a \Acrshort{svm} is used to classify stator fault in real time. To do so, the authors use \acrfull{wt} to process the signal, then the wavelet coefficients of healthy and faulty motors are compared. After this, statistical parameters were found, like standard deviation, kurtosis and skewness, so that the relevant features for stator inter turn fault could be identified. The authors choose the standard deviation since it showed constant noticeable change in healthy and faulty condition of the motor. Then, the standard deviation was used to train the SVM.
+
+\todo[inline]{o que são wavelet transforms?}
+
+In ~\cite{Patel2016}, a \Acrshort{svm} based scheme is used for condition monitoring and fault diagnosis of three-phase induction motor. Data of healthy motors and motors having faulty bearings, shorting of stator turns and broken rotor bars with varying load conditions was generated from laboratory. The scheme starts by calculating the total harmonic distortion of currents and voltages, thus forming feature vectors to train the \Acrshort{svm} classifier. This scheme provides an accuracy of more than 98\%.
+
+The total harmonic distortion can be calculated as follows:
+
+\begin{equation} 
+\label{eq:total_harmornic_distortion}
+THD_F = \frac{\sum_{i=2}^{n} V_i^2}{V_1}  
+\end{equation}
+
+\noindent where $V_n$ is the \acrshort{rms} value of the $nth$ harmonic and $n=1$ is th e fundamental frequency.
+
 \subsection{Hybrid Systems} % (fold)
 \label{sec:other_approaches}
-
-
-
-
-
-
-\section{Summary} % (fold)
-\label{sec:related_work_summary}
-
-
-Park’s Vector Approach to detect an inter turn stator fault in a doubly fed induction machine by a neural network 
-
-Recent Advances in Modeling and Online Detection of Stator Interturn Faults in Electrical Motors

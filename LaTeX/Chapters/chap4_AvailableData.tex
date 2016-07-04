@@ -110,11 +110,11 @@ The new dataset will have a superset of the currently working dataset's features
 \section{Available Data}
 \label{sec:available_data}
 
-As off the day of this document's writing, the available data can be divided into two categories: an unlabeled dataset containing the current, voltage and power logs of a factory's motor (data category 1) and a dataset labeled containing 3 sets of data - healthy motor, faulty motor and a more severe faulty motor (data category 2).
-It is expected another set of data from several machines with turn insulation faults to arrive by September (data category 3).
+As off the day of this document's writing, the available data can be divided into two categories: an unlabeled dataset containing the current, voltage and power logs of a factory's motor (\ref{subsec:data_category_1}) and a dataset labeled containing 3 sets of data - healthy motor, faulty motor and a more severe faulty motor (\ref{subsec:data_category_2}).
+It is expected another set of data from several machines with turn insulation faults to arrive by September (\ref{subsec:data_category_3}).
 The following is a summary of the two categories of data, as well as the expected data (\ref{subsec:data_category_3})
 
-\subsection{Data Category 1}
+\subsection{Unlabeled Data}
 \label{subsec:data_category_1}
 
 This data was provided by Optisigma from one of its pilots. Each tuple in this dataset contains the timestamp, root mean square of the last 30 seconds of the voltage per phase and the  current per phase. It also contains the mean power per phase, the connection type of the motor in that time period and the mean temperature.
@@ -125,7 +125,7 @@ Furthermore, given the sample difference being of 30 seconds we cannot study nei
 From this iteration, Optisigma was informed that the available data could not be used for the purpose of this dissertation.
 Therefore, it was provided another dataset (\ref{subsec:data_category_2}) so that an analysis could be made in order to understand not only the data and the conventional signal processing techniques, as well as determinate at which frequency the samples of the current and voltage should be made.
 
-\subsection{Data Category 2}
+\subsection{Labeled Data}
 \label{subsec:data_category_2}
 
 This data was provided so that the conventional signal processing techniques could be study, as well as to apply other techniques that could identify the fault. This data is composed by three datasets:
@@ -147,7 +147,7 @@ All the datasets have the same set of features:  \textbf{time}, \textbf{current 
 % \usepackage{booktabs}
 \begin{table}[htpb]
 \centering
-\caption{Data Category 2 features' description}
+\caption{Labeled Data features' description}
 \label{my-label}
 \begin{tabular}{@{}ccc@{}}
 \toprule
@@ -165,7 +165,7 @@ From the line-to-line voltage presented on the data, the third line-to-line volt
 
 For online signal processing, sampling with 18kHz is too high since it then brings computational complexity and such a sampling rate brings noise to the sampled signal. Therefore, a first re-sample of the data was made to reduce the sampling frequency to 1kHz. The sampling frequency will influence the max frequency that we can address on the spectrum analysis as well as the step of the analysed frequencies.
 
-\subsection{Data Category 3}
+\subsection{Final Data}
 \label{subsec:data_category_3}
 
-It is expected of this data to have a similar schema as the data in \ref{subsec:data_category_2}, and the sample frequency will depend on the analysis of the data category refered in \ref{subsec:data_category_2}. This data is expected to be from several motors with several short circuited inter-turns, so that a more robust model could be made.
+It is expected of this data to have a similar schema as the data in \ref{subsec:data_category_2}, and the sample frequency will depend on the analysis of the data referred in \ref{subsec:data_category_2}. This data is expected to be from several motors with several short circuited inter-turns, so that a more robust model could be made.
