@@ -15,7 +15,7 @@
 \chapter{Introduction}  
 \label{cha:introduction} 
 
-This is the introductory chapter of this dissertation. You will be presented the context in which this work is included, as well as the motivation that lead to the development of this thesis in section \ref{sec:motivation}. Section \ref{sec:problem} will describe the problem this thesis is approaching and disclose its main goals. Furthermore, section \ref{sec:proposed_approach} will present the proposed approach, following the contributions of this thesis in section \ref{sec:contributions}. At last, section \ref{sec:outline} presents the remaining chapters of this dissertation.
+This is the introductory chapter of this dissertation. The reader will be presented the context in which this work is included, as well as the motivation that lead to the development of this thesis in section \ref{sec:motivation}. Section \ref{sec:problem} will describe the problem this thesis is approaching and disclose its main goals. Furthermore, section \ref{sec:proposed_approach} will present the proposed approach, following the contributions of this thesis in section \ref{sec:contributions}. At last, section \ref{sec:outline} presents the remaining chapters of this dissertation.
 
 \section{Context and Motivation} % (fold)
 \label{sec:motivation}
@@ -43,9 +43,9 @@ On the other hand, if the malfunctions are detected in an early stage then the r
 In the datification era where we live and given the acceptance of \acrfull{iot} by the industries, there is the possibility to have a solution that relies on a proper trained model that uses the online data provided by sensors to provide insights and answers. 
 With an infrastructure of this nature, it would be possible not only to predict failures (within an confidence interval) as well as give real time insights of the \acrlong{em}' status. With this insights and predicted failures, it would led to an improvement of efficiency and availability, reduction in exploration costs, reduction in maintenance costs and a greater security in the decision-making process for maintenance.
 
-In this context, Altran has a project where the main objective is to build an assessment application for electric motors, providing insights as well as failure predictions. For this project, it is expected that Altran can arrange a partnership with Optisigma. This partnership is important since Optisigma has a device that can monitor \acrlong{em} and provide a set of useful information online to apply methods of \acrfull{esa}, which they have installed in several factories (pilot stage) - having data of these motors. Furthermore, with this partnership, it will be possible to mount an experimental test bench in which the faults can be induced so that several failures patterns can be studied. Due to economical and practical reasons, the low power \acrlongpl{ims} are the target motor category, with motors having 400V, 4 poles, 50Hz - which are the most used.
+In this context, Altran has a project where the main objective is to build an assessment application for electric motors, providing insights as well as failure predictions. For this project, it is expected that Altran can arrange a partnership with Optisigma. This partnership is important since Optisigma has a device that can monitor \acrlong{em} and provide a set of useful real-time data to apply methods of \acrfull{esa}, which they have installed in several factories (pilot stage) - having data of these motors. Furthermore, with this partnership, it will be possible to mount an experimental test bench in which the faults can be induced so that several failures patterns can be studied. 
 
-\Acrshort{esa} ~\cite{Bonaldi2012} is a general term for a set of electrical machine condition monitoring techniques through the analysis of electrical signals, making those non-intrusive techniques. This means that if a factory wants to start tracking information of a specific or several motors, it just has to add a component between the motor and the power supply.
+Due to economical and practical reasons, the low power \acrlongpl{ims} are the target motor category, with motors having 400V, 4 poles, 50Hz - which are the most used.
 
 For purposes of this dissertation's work, a specific set of problems will be addressed and analyzed for further implementation.
 
@@ -77,7 +77,7 @@ For the presented reasons, the problem this dissertation proposes to solve is th
 
 This dissertation will follow the \acrlong{crispdm} methodology (discussed in section \ref{sec:crispdm}), where the first phase of these dissertation was the study of three phase induction motors and related problems, so that one of them could be chosen and further study. 
 
-Regarding this kind of failures, there are a set of works where \Acrshort{esa} techniques are used with other conventional techniques to detect short-circuited faults ~\cite{Ourici2012} ~\cite{Cheng2011} ~\cite{Joksimovic2013} ~\cite{Cruz2001} ~\cite{Cabanas2013} ~\cite{Gandhi2011} ~\cite{Kia2013} ~\cite{M.a2014} ~\cite{Bouzid2013} ~\cite{Bakhri2012} ~\cite{Bakhri2012}, and another set that uses machine learning to detect short-circuited as well as other faults ~\cite{Toma2011} ~\cite{Wolkiewicz2013} ~\cite{Patel2016} ~\cite{Jagadanand2015}.
+Regarding this kind of failures, there are a set of works where \Acrshort{esa} techniques are used with other conventional techniques to detect short-circuited faults ~\cite{Cheng2011} ~\cite{Joksimovic2013} ~\cite{Cruz2001} ~\cite{Cabanas2013} ~\cite{Gandhi2011} ~\cite{Kia2013} ~\cite{M.a2014} ~\cite{Bouzid2013} ~\cite{Bakhri2012}, and another set that uses machine learning to detect short-circuited as well as other faults  ~\cite{Ourici2012} ~\cite{Toma2011} ~\cite{Wolkiewicz2013} ~\cite{Patel2016} ~\cite{Jagadanand2015}.
 
 The data understanding will be followed by an iterative study of signal processing, data stream methods and machine learning techniques, so that features can be derived and models can be compared.
 After the evaluation phase of the most promising models, the process may be re-iterated. Still, a prototype is expected as a result of this dissertation.
@@ -115,7 +115,7 @@ It is expected that this goals bring the following contributions:
 
 The rest of the document is organized as follows:
 
-\textbf{Chapter} \ref{cha:intro_electric_motors} presents the basics concepts when addressing three phase induction motors, covering three phase circuits, working principle of induction motors and common failures.
+\textbf{Chapter} \ref{cha:intro_electric_motors} presents the basics concepts when addressing three phase induction motors, covering three phase circuits, working principle of induction motors and common failures - which was the result of the business understanding phase. In spite of the section's size, it gives context and introduces the subject to the reader, and therefore it was important not to summarize too much. If the reader is found of this subject's dissertation, this chapter can be skipped.
 
 \textbf{Chapter} \ref{cha:state_of_the_art} presents conventional methods used on turn insulation fault detection as well as other methods where machine learning have been used.
 

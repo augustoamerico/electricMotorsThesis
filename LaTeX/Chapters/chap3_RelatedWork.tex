@@ -26,30 +26,140 @@ The use of intelligent systems have gain a lot of momentum and are target of rec
 \section{Conventional Techniques for fault detection} % (fold)
 \label{sec:conventional_techniques}
 
+Analyse the current and voltage of several components of the motor and instantaneous power to detect problems is common practice ~\cite{Bonaldi2012}. These kind of analysis  are aim to detect problems such as faults in the stator, rotor problems, problems on the engagement, efficiency problems, among others. These kind of analysis supposes that the motor electrical and mechanical internals can be thought of as a transfer function  that converts the input voltage waveform into the output current waveform (figure \ref{fig:motor_transducer}), allowing electrical signals (voltage and/or current) to carry information of the electrical and mechanical problems.
+These analysis are not something easy to be done, because it involves a set of comparisons with previously stored patterns and own "history" of the motor being analyzed ~\cite{Bonaldi2012}. 
+
+
+\subsection{Symmetrical components: Negative Sequence and Zero sequence } % (fold)
+\label{subsec:negative_sequence_current_compensation}
+
+Symmetrical components is a technique used to simplify the analysis of an unbalanced \acrshort{tp} machine. The idea is that an asymmetrical set of $N$ phasors can be expressed as a linear combination of $N$ symmetrical set of phasors by means of a complex linear transformation. The resulting $N$ symetrical phasors can be referred to as positive, negative or zero.
+
+A positive sequence (or direct sequence) is a set of phasors that are equal in magnitude and lag 120º in a clock-wise direction. In figure \ref{fig:positive_negative_sequence}, it can be seen a positive voltage sequence. 
+
+A negative sequence (or inverse sequence) is a set of phasors that are equal in magnitude and lag 120º in a counter clock-wise direction. In figure \ref{fig:positive_negative_sequence}, it can be seen a negative voltage sequence. 
+
+A zero sequence (or homopolar sequence)  is a set of phasors that are equal in magnitude but are not lagged. Since there is no rotation sequence due to not existing delay, this is called a zero sequence.
+
+\begin{figure}[htbp]
+\centering
+ \subbottom[Positive sequence components]{%
+    \includegraphics[width=0.4\linewidth]{phasorDiagramExample}}%
+ \subbottom[Negative sequence components]{%
+    \includegraphics[width=0.3\linewidth]{negativesequence.png}}
+\caption{Positive sequence components and Negative sequence components }
+\label{fig:positive_negative_sequence}
+\end{figure}
+
+\todo[inline]{fazer a alteração da imagem da componente negativa como pdf, e fazer a edição no photoshop as a pdf}
+
+
+When an interturn short-circuit fault arises, another physical phenomenon that enables the fault detection is the appearance of a negative-sequence component in the supply currents ~\cite{Cabanas2013}. The faulty phase has fewer turns than the healthy phases, generating less electromotive force and having difference impedance, which leads to an unbalanced system of three-phase currents
+
+In ~\cite{Bouzid2013}, it's deduced an analytical expression for the symmetrical components of the steady-state stator phase current under several windings faults, such as interturn short-cirtuit and phase-to-phase short-circuit. From this study, the author has shown that the phase angle of the negative sequence current is a robust indicator of stator fault and is able to effectively locate the faulty phases, since it is insensitive neither to the load conditions nor to the voltage unbalance and the frequency variation ~\cite{Bouzid2013}. Further, the author also suggests that zero sequence current is useful to detect the phase-to-ground fault and discriminate between interturn short-circuit and phase-to-ground short-circuit.
+
+
+Still, these methods have an handicap: other causes not related to short-circuit faults can also introduce a negative-sequence component in the current (unbalanced supply voltage, constructive asymmetries), reducing the sensitivity of early faults detection. Regarding this handicap, in ~\cite{Bakhri2012} the authors introduce a technique for the compensation of negative-sequence current components that are not related to stator faults, including the effect of voltage unbalance, allowing to detect even small stator shorted turn faults.  
+
+
+
 \subsection{Machine Current Signature Analysis} % (fold)
 \label{subsec:mcsa}
-\acrfull{mcsa} is a technique used to analyze and monitor the trend of dynamic energized systems. This technique uses the induction motor as a transducer by monitoring the stator currents, allowing the user to analyze the produced power spectrum, referred as motor signature. This allows to get insights on the motors, by identifying the magnitude and frequency of each individual component that integrates the motor current signal, without the need to stop the motor. 
+\acrfull{mcsa} is a technique based on the monitoring of the input current of the motor, and it's used to analyze and monitor the trend of dynamic energized systems.By monitoring the stator currents it is possible for the user to analyze the produced current spectrum, referred as motor signature. This provides insights on the motors, by identifying the magnitude and frequency of each individual component that integrates the motor current signal, without the need to stop the motor. The diagnostic is typically done by comparing the spectrum of the monitored current with the expected spectrum of the motor if it was in an healthy state.
 
-The motor current signature is recorded in a time domain format. The current is represented in a graph form with the amplitude shown on the “Y” axis and the time on the “X” axis. The result is a typical current sine-wave shown in Figure 1.
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=0.5\textwidth]{motor_as_a_function.png}
+\caption{Motor as a function, where the input is the voltage and the output is the current}
+\label{fig:motor_transducer}
+\end{figure}
+
+The motor current signature is recorded in a time domain format, resulting in a wave form as shown in figure \ref{fig:three_phase_sampled}.
+
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=0.9\textwidth]{three_phase_waveform.png}
+\caption{Sampled three phase currents of a motor}
+\label{fig:three_phase_sampled}
+\end{figure}
+
+In order to analyse the power spectrum the main tool employed is the \acrfull{fft} ~\cite{Bonaldi2012}, in spite of some systems employ in conjunction with other techniques to increase the ability of fault detection from signal acquisition, through processing, up to the diagnosis step. An example of a \acrshort{fft} output's plot can be seen in figure \ref{fig:frequency_fft}.
+
+
+\begin{figure}[htpb]
+\centering
+\includegraphics[width=0.7\textwidth]{frequency_fft.png}
+\caption{Current Spectrum of an healthy motor sampled at 1kHz}
+\label{fig:frequency_fft}
+\end{figure}
+
+
+\acrshort{fft} is an algorithm that computes the \acrfull{dft}. The \acrshort{fft} computes the transform in $O(n\log{}n)$, which has lower time complexity than the \acrfull{dft}, which has a time complexity of $O(n^2)$.
+
+Concerning the  \acrshort{fft}, it is important to approach the Nyquist theorem. This theorem states that for any signal to be reconstructed without significant losses, the sample frequency must be twice of the maximum frequency presented on the signal. For example, if the objective is to analyse frequencies on a signal up to 500 Hz, the sample frequency must be 1kHz.
+
+In ~\cite{Penman1994} the authors detected stator winding interturn short-circuits patterns by analysing the axial leakage flux components of the current using a flux sensor. 
+Axial flux is the horizontal magnetic flux (parallel to the shaft) generated by the stator. For the ideal machine the axial leakage flux is zero, but in practice asymmetries exist due to imperfections in winding geometry as well as non-uniformities present in the materials of construction ~\cite{Penman1994}. They formulated a mathematical model for the frequency components of inter-turn short circuited, which depends on the values of motor slip, number of poles, power supply frequency and rotor angular speed. Since these kind of failures don't reproduce new frequencies in the current spectrum,  ~\cite{Penman1994} states that it could be difficult to detect stator faults through current spectrum only using \acrshort{mcsa}. 
+
+Although, in ~\cite{Jung2006} the author have demonstrated, through a lot of experimental results on \acrshort{ims}, that interturn short-circuit can be detected accurately in stator windings of low voltage \acrshort{ims} by using \acrshort{mcsa}, mathematical formulas and a digital signal processing techniques for high-speed signal processing and advanced signal-and-data-processing.
 
 
 \subsection{Park's Vector and Extended Park's Vector Approach} % (fold)
 \label{subsec:epva}
 
-Stator Winding Fault Diagnosis in Three-Phase Synchronous and Asynchronous Motors, by the Extended Park’s Vector Approach
+The Park's Vector analysis consists in the transformation of the stator currents into Park's vector, through the equation \ref{eq:parks_vector}.
 
+\begin{equation} \label{eq:parks_vector}
+    \begin{cases}
+	    i_{d}(t) =  \sqrt[2]{\frac{2}{3}} i_A(t) - \sqrt[2]{\frac{1}{6}} i_B(t) - \sqrt[2]{\frac{1}{6}} i_C(t) \\
+	    i_{d}(t) =  \sqrt[2]{\frac{1}{2}} i_B(t) - \sqrt[2]{\frac{1}{2}} i_C(t) 
+	\end{cases}
+\end{equation}
 
+ Under ideal conditions, the Park's Vector has the following components:
+\begin{equation} \label{eq:parks_vector_d_ideal_cond}
+    i_D = (\frac{\sqrt{6}}{2})i_M sin(\omega t)
+\end{equation}
+\begin{equation} \label{eq:parks_vector_q_ideal_cond}
+    i_D = (\frac{\sqrt{6}}{2})i_M sin(\omega t - \frac{\pi}{2})
+\end{equation}
+ 
+where
+    $i_M$ is the maximum value of the current positive sequence (A)
+    $\omega$ is the angular supply frequency (rad/s)
+    $t$ is the time variable (s)
+
+The corresponding representation is a perfect circle, as shown in figure \ref{fig:park_vector_circle} (a).
+Although, under fault conditions, equations \ref{eq:parks_vector_d_ideal_cond} and \ref{eq:parks_vector_q_ideal_cond} are not valid. since the motor supply current will contain other components besides the positive-sequence component, leading to a representation as shown in figure \ref{fig:park_vector_circle} (b).
+
+\begin{figure}[htbp]
+\centering
+ \subbottom[Park's vector of an healthy motor]{%
+    \includegraphics[height=0.3\linewidth]{park_healthy_motor.png}}%
+ \subbottom[Park's vector of an damaged motor]{%
+    \includegraphics[height=0.3\linewidth]{park_damaged_motor.png}}
+\caption{Positive sequence components and Negative sequence components }
+\label{fig:park_vector_circle}
+\end{figure}
+ 
+ 
+ The extended Park's vector approach is a simple and efficient diagnosis method based on the spectral analysis of Park's vector modulus (PVM) which is computed as:
+ 
+\begin{equation} \label{eq:parks_vector_modulus}
+    PVM = \sqrt{(i_d^2 + i_q^2)}
+\end{equation}
+
+By taking into account the current in all the three phases, this method provides a more meaningfull spectrum than the one obtained by the conventional motor current spectral analysis.
+ 
+This techniques was used to detect stator winding faults in operating \acrshort{tp} motors in  ~\cite{Cruz2001}, where it shows the ability of the EPVA to detect stator circuit faults, even when these are strictly confined to the degradation of the stator magnetic circuit.
+
+%%%%%%%%%%%% Park-Hilbert Method %%%%%%%%%%%%
 \subsection{Park-Hilbert Method} % (fold)
 \label{subsec:park_hilbert_method}
 
-\subsection{Symmetrical Components under Stator Faults} % (fold)
-\label{subsec:symmetrical_components}
+Detection of inter-turn short-circuit in induction motors using Park-Hilbert method ~\cite{Kia2013}
 
-\subsection{Negative Sequence Current Compensation} % (fold)
-\label{subsec:negative_sequence_current_compensation}
 
-\subsection{Zero Sequence Components} % (fold)
-\label{subsec:zero_sequence_components}
 
 \subsection{Resolution and Fast Response} % (fold)
 \label{subsec:resolution_fast_response}
@@ -84,7 +194,12 @@ Each perceptron have a linear combination so that a value may be produced from t
 \sum_{i=1}^{n} w_{i}*x_{i}
 \end{equation}
 
-After the perceptron computes the linear combination, this value is applied to a function which will give us the class. For example, in a binary classification problem, the activation function can be the Logistic Function - also called sigmoid function.
+For example, if the \Acrshort{ann} is composed by only one perceptron, after it computes the linear combination, this value is applied to a function which will give us the class. For example, in a binary classification problem, the activation function can be the Logistic Function - also called sigmoid function.
+
+
+
+Park ’ s Vector Approach to detect an inter turn stator fault in a doubly fed induction machine by a neural network
+
 
 \subsection{Support Vector Machine} % (fold)
 \label{sec:svm}
