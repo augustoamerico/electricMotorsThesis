@@ -19,7 +19,7 @@ procedures.
 
 \acrshort{esa} is the general term for a set of electrical machine condition monitoring techniques through the analysis of electrical signals such as current and voltage. Several works report the use of those techniques applied to turn insulation fault detection, presented in section \ref{sec:conventional_techniques}. However, one issue that is rarely discussed is the need for rapid response to prevent catastrophic damage when an interturn short-circuit fault arises. This topic is addressed in section \ref{subsec:resolution_fast_response}.
 
-The use of intelligent systems have gain a lot of momentum and are target of recent works, where the most related to this work are presented in section \ref{sec:machine_learning_approaches}.
+The use of intelligent systems have gain a lot of momentum and are target of recent works, where the most related to this dissertation's goal  are presented in section \ref{sec:machine_learning_approaches}.
 
 
 
@@ -178,7 +178,7 @@ The analytical signal $ \bar{x}(t) $ is obtained by coupling $x(t)$ with its \ac
     a(t) = \sqrt{2}{ [ x^2(t) + y^2(t) ]}
 \end{equation}
 
-\begin{equation} \label{eq:analytical_function_a}
+\begin{equation} \label{eq:analytical_function_o}
     \theta(t) = arctan\left (\frac{x(t)}{y(t)} \right)
 \end{equation}
 
@@ -199,9 +199,12 @@ In this context, effective approaches need to use signal-processing techniques f
 
 \section{Intelligent Systems for fault detection} % (fold)
 \label{sec:machine_learning_approaches}
+Artificial Intelligence techniques can be used to classify the state of the motor into a series of classes, like healthy state, different types of faulty states and different fault severity degree whithout the need of complex mathematical formulas ~\cite{Riera-Guasp2015}. In ~\cite{Gandhi2011} it is concluded that artificial models provide a fast and accurate simulation of the machine once they are trained.
+However, these models are motor specific and require extensive training to provide good results under all conditions.
 
 \subsection{Artificial Neural Networks} % (fold)
 \label{sec:ann}
+
 
 \Acrfullpl{ann} are classifiers inspired by Biology. As all kind of classifiers, an \Acrshort{ann} goal is to maximize the likelihood for the predicted result of a given input to be as close as possible of the real result. This goal is accomplished by training the \Acrshort{ann} , which will adapt the consideration of the input against the expected result of that input. This classifier provides a general method for learning functions from examples, being the examples real-valued, discrete-valued, or vector-valued.
 
@@ -214,7 +217,7 @@ In this context, effective approaches need to use signal-processing techniques f
 \label{fig:sigmoid_unit}
 \end{figure}
 
-Each perceptron have a linear combination so that a value may be produced from the input vector. from figure \ref{fig:sigmoid_unit}, it can be seen that each input has its own height. So, for example, a simple linear combination could be such as the equation \ref{eq:linear_combination}.
+Each perceptron have a linear combination so that a value may be produced from the input vector. from figure \ref{fig:sigmoid_unit}, it can be seen that each input has its own weight. So, for example, a simple linear combination could be such as the equation \ref{eq:linear_combination}.
 
 \begin{equation} 
 \label{eq:linear_combination}
@@ -223,10 +226,52 @@ Each perceptron have a linear combination so that a value may be produced from t
 
 For example, if the \Acrshort{ann} is composed by only one perceptron, after it computes the linear combination, this value is applied to a function which will give us the class. For example, in a binary classification problem, the activation function can be the Logistic Function - also called sigmoid function.
 
+In ~\cite{Jawadekar2014}, the authors present a multiple faults detection system for an induction motor based on an \Acrshort{ann} (three-layer feedforward neural network). For signal processing, they use the \acrfull{cwt} since it can be effective in analyzing stationary (steady-state) and non stationary (transient) signals under a non-sinusoidal supply condition.
+
+In this context, the use of the \acrshort{cwt} is appropriate since it gives information about the signal in the domains of frequency and time.
+Mathematically, the \acrshort{cwt} of a real signal $x(t)$ is defined as follows:
+
+\begin{equation} 
+\label{eq:wavelet_transform}
+    W_f(a,b) = \int_{- \infty}^{\infty}  x(t) \psi_{ab}^*(t) dt
+\end{equation}
 
 
-Park ’ s Vector Approach to detect an inter turn stator fault in a doubly fed induction machine by a neural network
+\noindent where $ \psi_{ab}^*(t)$  is a continuous function in both the time domain and the frequency domain called the mother wavelet and the (*) represents the operation of complex conjugate.
 
+The mother wavelet function $ \psi_{ab}^*(t)$ is such that:
+
+\begin{equation} 
+\label{eq:mother_wavelet}
+   \psi_{ab}^*(t) = \frac{1}{\sqrt{(\lvert a\rvert)}} \psi \left( \frac{t - b}{a} \right)  a,b \in \mathbb{R}, a \neq 0 
+\end{equation}
+
+The main purpose of the mother wavelet is to provide a source function to generate the daughter wavelets which are simply the translated and scaled versions of the mother wavelet.
+
+It is important to note the following property regarding the mother wavelet:
+
+\begin{equation} 
+\label{eq:mother_wavelet_sum}
+   \int_{- \infty}^{\infty}  \psi(t) dt = 0
+\end{equation}
+
+The input $a$ of the wavelet transform is the scale and the input $b$ of the wavelet transform is the translation, controlling the position of the wavelet in time.
+
+After the application of the \acrshort{cwt} for each phase, the authors use the minimum value of the coefficients of each phase and the \acrshort{ann} is trained with that set of values.
+
+
+
+In ~\cite{Ourici2012}, the authors compute the Park's vector of the three phases and use the components for input of the \acrshort{ann}. The authors state that the proposed detection method works well if the machine being diagnosed operate only in steady state.In spite of that handicap, given the simplicity of the method it shows good results.
+
+In ~\cite{Wolkiewicz2013}, the authors propose a fault progression indicator that is defined as follows:
+
+\begin{equation} 
+\label{eq:fault_progression_indicator}
+   \xi_k = \theta_0 - \theta_k
+\end{equation}
+
+where $\xi_k$ is the fault indicator, $\theta_0$ is the phase-shift between the phase voltage and line current of a stator phase in an healthy state, and $\theta_k$ is the phase-shift between the phase voltage and line current of a stator phase with $k = 0,1,2,3,4,5...$ shorted turns.
+This indicator is computed online, and togheter with the stator voltage \acrshort{rms} and the stator current \acrshort{rms} are the input values for the \acrshort{ann}.
 
 Recent Advances in Modeling and Online Detection of Stator Interturn Faults in Electrical Motors
 
@@ -249,9 +294,8 @@ This distance from the decision surface to the closest data point determines the
 Therefore, the decision function for an \Acrshort{svm} is fully specified by a (usually small) subset of the data which defines the position of the separator, which can be seen in figure \ref{fig:svm_margin}. These points are referred to as the support vectors. They are called vectors because in a vector space, a point can be thought of as a vector between the origin and that point.
 
 
-In ~\cite{Jagadanand2015}, a \Acrshort{svm} is used to classify stator fault in real time. To do so, the authors use \acrfull{wt} to process the signal, then the wavelet coefficients of healthy and faulty motors are compared. After this, statistical parameters were found, like standard deviation, kurtosis and skewness, so that the relevant features for stator inter turn fault could be identified. The authors choose the standard deviation since it showed constant noticeable change in healthy and faulty condition of the motor. Then, the standard deviation was used to train the SVM.
+In ~\cite{Jagadanand2015}, a \Acrshort{svm} is used to classify stator fault in real time. To do so, the authors use \acrfull{cwt} to process the signal, then the wavelet coefficients of healthy and faulty motors are compared. After this, statistical parameters were found, like standard deviation, kurtosis and skewness, so that the relevant features for stator inter turn fault could be identified. The authors choose the standard deviation since it showed constant noticeable change in healthy and faulty condition of the motor. Then, the standard deviation was used to train the SVM.
 
-\todo[inline]{o que são wavelet transforms?}
 
 In ~\cite{Patel2016}, a \Acrshort{svm} based scheme is used for condition monitoring and fault diagnosis of three-phase induction motor. Data of healthy motors and motors having faulty bearings, shorting of stator turns and broken rotor bars with varying load conditions was generated from laboratory. The scheme starts by calculating the total harmonic distortion of currents and voltages, thus forming feature vectors to train the \Acrshort{svm} classifier. This scheme provides an accuracy of more than 98\%.
 
@@ -264,5 +308,14 @@ THD_F = \frac{\sum_{i=2}^{n} V_i^2}{V_1}
 
 \noindent where $V_n$ is the \acrshort{rms} value of the $nth$ harmonic and $n=1$ is th e fundamental frequency.
 
-\subsection{Hybrid Systems} % (fold)
+\subsection{Other approaches} % (fold)
 \label{sec:other_approaches}
+
+
+\acrfull{fl} is an approach of partitioning a feature space info fuzzy sets and utilizing fuzzy rules fore reasoning, which provides an approximate human reasoning ~\cite{Gao2015}. Several works have presented the successfully use of \acrshort{fl} for fault detection and diagnosis ~\cite{Azgomi2013, Zidani2008, JoverRodriguez2008}.
+In  ~\cite{JoverRodriguez2008} the fuzzy system is based on knowledge expressed in rules and membership functions, describing the stator windings. The presented method has the hability to work with variable speed drives and is able to identify the motor stator condition with high accuracy.
+In ~\cite{Xu-hong2007} the authors describe a fuzzy \acrshort{ann}  model trained using a genetic algorithm that provides a very flexible and specific response to nonlinear situations unique to a machine construction.
+
+\acrfull{pso} is used in ~\cite{Liu2006}, where the author proposes this method to locale and determine the fault severity. \acrshort{pso} shares the ability of \acrshort{ann} and \acrfull{fl} systems to handle nonlinearities. This technique is train using both healthy motor data as well as faulty motor data, and starts with a random selection of particles and then iterates until the error is minimized.
+ 
+\acrfull{cot} was applied in REF, where the technique is applied in order to improve the model in case of an unforeseen situation arises. This essentially allows the weighting of the \acrshort{ann} on a moving basis, and the model “forgets” previous weights. 

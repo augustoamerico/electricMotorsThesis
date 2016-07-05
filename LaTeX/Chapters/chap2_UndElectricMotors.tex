@@ -17,7 +17,7 @@
 % ================
 
 
-This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase \acrfull{em} - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it's presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the life cycle cost of these motors and approach the current maintenance strategies. The sources of the information presented in this chapter are mainly ~\cite{Helfenstein2000}, ~\cite{Alves2003}, ~\cite{Fitzgerald1985}, ~\cite{Guru2001}, ~\cite{Rashid2011} and ~\cite{Ferreira1}.
+This chapter introduces the principal concepts that must be known when addressing \acrfull{tps}. Section \ref{sec:three_phase_systems} presents an overview of what is a \acrshort{tps} and its properties. Section \ref{sec:three_phase_induction_motors} explains the composition of a three phase \acrfull{em} - also known as \acrfull{tpim} - as well as its working principle and several properties and characteristics. In section \ref{sec:tpin_relevance} it is presented the reason why this kind of motor is so important and its landscape. Furthermore, section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle} will present the life cycle cost of these motors and approach the current maintenance strategies. The sources of the information presented in this chapter are mainly ~\cite{Helfenstein2000}, ~\cite{Alves2003}, ~\cite{Fitzgerald1985}, ~\cite{Guru2001}, ~\cite{Rashid2011} and ~\cite{Ferreira1}.
 
 \section{Three phase Circuits} % (fold)
 \label{sec:three_phase_systems}
@@ -37,7 +37,7 @@ A three-phase circuit has several advantages over a single-phase circuit - and t
 
 With a three-phase system we can get an higher power/weight ratio of alternators, since a three-phase alternator is smaller and lighter than a single phase alternator of the same power output. Also, the three-phase transmission system  requires less copper or aluminium to transmit the same quantity of power of a specific distance than a single phase system.
 
-In Single phase systems the instantaneous power is sinusoidal, therefore not constant, resulting in power vibrations. In a balanced three phase power system, though, the instantaneous power is always the same.
+In single phase systems the instantaneous power is sinusoidal, therefore not constant, resulting in power vibrations. In a balanced three phase power system, though, the instantaneous power is always the same.
 
 \subsection{Characteristics}
 
@@ -56,28 +56,33 @@ Each phase is separated by 120º, which means that if phase \emph{a} has a value
 
 The voltage phases of figure \ref{fig:balanced_tp_time_domain} can be expressed in the time domain as:
 \begin{equation} \label{eq:balanced_tpVan_timedomain}
-	V_{an}(t) = V_{m}\sqrt{2}\cos{\omega t} V
+	V_{an}(t) = V_{m}\sqrt{2}\cos{\omega t}
+	\tagaddtext{V}
 \end{equation}
 \begin{equation} \label{eq:balanced_tpVbn_timedomain}
-	V_{bn}(t) = V_{m}\sqrt{2}\cos{\omega t - 120\degree} V
+	V_{bn}(t) = V_{m}\sqrt{2}\cos{\left(\omega t - 120\degree\right)} 
+	\tagaddtext{V}
 \end{equation}
 \begin{equation} \label{eq:balanced_tpVcn_timedomain}
-	V_{cn}(t) = V_{m}\sqrt{2}\cos{\omega t - 240\degree} V
+	V_{cn}(t) = V_{m}\sqrt{2}\cos{\left(\omega t - 240\degree\right)} 
+	\tagaddtext{V}
 \end{equation}
 
 where $V_{an}$ represents the voltage between phase \emph{a} and neutral, $V_{bn}$ represents the voltage between phase \emph{b} and neutral, $V_{cn}$ represents the voltage between phase \emph{c} and neutral, $V_{m}$ denotes the phasors' magnitude and $\omega$ represents the angular velocity - which is $2\pi f$, where $f$ is the frequency of the phase. 
 
-These voltage phases can also be represented in phasors, where we can note that:
+These voltage phases can also be represented in phasors. A phasor is a complex number representing a sinusoidal function whose amplitude $(A)$ and initial phase $(\phi)$ are time-invariant - and can be noted as:
 
 \begin{equation} \label{eq:balanced_tpVan}
 	V_{an} = V_{m}\angle_{\phi}
 \end{equation}
 \begin{equation} \label{eq:balanced_tpVbn}
-	V_{bn} = V_{m}\angle_{\phi - 120\degree} 
+	V_{bn} = V_{m}\angle_{\omega - 120\degree} 
 \end{equation}
 \begin{equation} \label{eq:balanced_tpVcn}
 	V_{cn} = V_{m}\angle_{\phi - 240\degree} = V_{m}\angle_{\phi + 120\degree} 
 \end{equation}
+
+\noindent where $\angle$ represents an angle, and $\phi$ represents the initial phase angle.
 
 \begin{figure}[htbp]
 	\centering
@@ -183,10 +188,10 @@ The $\Delta$ impedance ($Z_{\Delta}$) is three times greater than the Y impedanc
 
 A motor is a machine that transforms electric energy in mechanical energy.
 Such a machine can be implemented with the support of a DC power supply (DC Motor) or with a AC power supply (AC Motor).
-In the AC Motor class, there are still two kind of motors - the synchronous motors and the asynchronous motors, being the last one also known as \acrfull{tpim}.
+In the AC Motor class, there are still two kind of motors - the synchronous motors and the asynchronous motors, being the latter also known as \acrfull{tpim}.
 
 
-Then, an \acrshort{tpim} can be implemented for a specific kind of phase voltage - single-phase, two-phase or three-phase.
+Thus, an \acrshort{tpim} can be implemented for a specific kind of phase voltage - single-phase, two-phase or three-phase.
 By two-phases or three-phases (polyphase) it mean that the stator contains multiple distinct windings per motor pole, driven by corresponding time shifted sine waves.
 Our focus will be on the \acrfull{tpim}.
 
@@ -203,7 +208,7 @@ This kind of motors has been used, traditionally, in constant and variable-speed
 
 \subsection{Main Components}
 
-The \acrshort{ims} is also known as asynchronous motor. This term \emph{asynchronous} is used because the speed of the generated magnetic field is not equal to the speed of the rotor. The term \emph{induction} is used because the rotor movements is due to the electromotive forces exercised by the generated magnetic field.
+The \acrshort{ims} is also known as asynchronous motor. This term \emph{asynchronous} is used because the rotational speed of the generated magnetic field is not equal to the rotational speed of the rotor. The term \emph{induction} is used because the rotor movements is due to the electromotive forces exercised by the generated magnetic field.
 In figure \ref{fig:ims} (page \pageref{fig:ims}) you can see the several components of the \acrshort{ims}. You can see that the motor is composed by a fan, an end bell, a wiring box, a stator (and stator coils), a rotor (a squirrel-cage one) and bearings. The fan will mantain the motor at an appropriated temperature, while the stator will receive current from the power source connected to the motor and the rotor will rotate, supported by the bearings - creating mechanical movement.
 In this section, we will only cover the stator and the rotor, which are the main components of the motors. 
 
@@ -288,10 +293,10 @@ The synchronous speed is the speed at which the rotational magnetic field rotate
 	 n_{s} = \frac{120f}{p}(rpm)
 \end{equation}
 
-where $f$ is the voltage frequency and $p$ is the number of poles in the stator.
+\noindent where $f$ is the voltage frequency and $p$ is the number of poles in the stator.
 
 From the expression \ref{eq:synchronous_speed} we can see that the greater is the pole quantity (always in pairs), the lower is the rotating magnetic field frequency.
-Therefore, the max speed of an \acrshort{tpim} supplied by a 50hz power source is 3000rmp, due to the fact that the minimum value of poles number is 2.
+Therefore, the max speed of an \acrshort{tpim} supplied by a 50hz power source is 3000rpm, due to the fact that the minimum value of poles number is 2.
 
 
 \subsubsection{Slip}
@@ -301,7 +306,7 @@ In an \acrshort{tpim}, the rotor's rotational speed is not equal to the synchron
 	 n_{s} - n
 \end{equation}
 
-where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
+\noindent where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
 
 However, \emph{slip} is more usually expressed as a fraction of synchronous speed. The \emph{factional slip} $s$ is
 
@@ -309,7 +314,7 @@ However, \emph{slip} is more usually expressed as a fraction of synchronous spee
 	s = \frac{n_{s} - n}{n_{s}} 
 \end{equation}
 
-where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
+\noindent where $n_{s}$ is the synchronous speed and $n$ is the rotor speed.
 
 The slip will depend of mechanical friction and the load. It is important to remember that the inductive reactance will depend on the speed difference between the inductor (stator) and the induced (rotor), and the bigger the difference then the bigger will be the inductive reactance. Therefore, the bigger the slip, the bigger will be the consumed current.
 
@@ -383,7 +388,7 @@ Such applications lead to an high consumption of electrical energy.
 Worldwide, \acrshort{em} are responsible for the consumption of 30-40\% of electrical energy, while in developed countries this values raises to 50-60\% and in European Union to 70-75\%, making them one of the most important electrical charges, being responsible for 13\% of $CO_{2eq}$. 
 Due to its relatively low price, good efficiency and high availability, \acrshort{ims}  are the most used electric motors in the market of power from 0.75KW - representing 85-90\% of the installed motors in the industry. 
 
-Still, there are several types of electric motors in the industry. Above the 0.75KW of power, the motors normally used are \acrshort{tp} \acrshort{ac} and commutated \acrshort{dc} with \acrshort{tp} electric controllers.
+Still, there are several types of electric motors in the industry. Above the 0.75KW of power, the motors normally used are \acrfull{tp} \acrshort{ac} and commutated \acrshort{dc} with \acrshort{tp} electric controllers.
 In the \acrshort{tp} \acrshort{ac} domain, in addition to \acrshort{ims}, we also have \acrfull{wrtpim}, \acrfull{wrtpim}, \acrfull{pmsm} and \acrfull{rm}. 
 
 For powers above 0.75KW, conventional \acrshort{dc} motors are bound to disappear in the industry due to its low availability and efficiency. However, in the \acrshort{dc} domain, there are two types of motors widely used - \acrfull{bldc} and \acrfull{srm}, both requiring electric controllers.
@@ -422,7 +427,7 @@ From the components of the \acrshort{lcc}, the two biggest costs are the explora
 \end{figure}
 
 Active power has a direct influence in the contracted/taken power and peak power, which have a specific cost associated in the electric bill. Therefore, bigger efficiency means less energetic costs.
-The low motor's availability may have very significant indirect costs. When the motor fails unexpectedly, there are significant costs associated to its unplanned stop due to possible system stops, production losses, inactive labor,delivery failures and possibly lost of clients, transport of the motor to the repairer, motor repair, etc. 
+The low motor's availability may have very significant indirect costs. When the motor fails unexpectedly, there are significant costs associated to its unplanned stop due to possible system stops, production losses, inactive labor, delivery failures and possibly lost of clients, transport of the motor to the repairer, motor repair, etc. 
 Generally, the investment in \acrshort{ims}'s efficiency, power factor and availability improvements is largely compensated by the benefits that come from it.
  
 \begin{figure}[htbp]
@@ -479,7 +484,7 @@ This strategy presents some characteristics to accomplish its goals, as for the 
 \subsection{Motor failures}
 \label{subsec:motor_failures}
 
-Over the years, several surveys (~\cite{Bonnett2010}, ~\cite{Thorsen1995}, ~\cite{Mccoy1986}, ~\cite{Bonnett1992}) have been made targeting the failure analysis of induction motors (small, medium and large), leading to similar values in the principal fault's categories and a better understanding about the failure's root.
+Over the years, several surveys (~\cite{Bonnett2010}, ~\cite{Thorsen1995}, ~\cite{Mccoy1986}, ~\cite{Bonnett1992}) have been made targeting the failure analysis of induction motors (small, medium and large), leading to similar values in the principal fault's categories and a better understanding about the failure's cause.
 
 In spite of the variety of sources of machine faults (figure \ref{fig:Sources_im_failures}), these studies have converge in the main sources of failures and shown similar values about the frequency in which they happen, as shown in table \ref{tab:failure_distribution}. A drilled down distribution can be seen in the table \ref{tab:failure_distribution_drilldown} according to ~\cite{Mccoy1986}.
 
@@ -544,3 +549,27 @@ Balance Weight & 1\% \\
 Other & 1\%
 \end{tabular}
 \end{table}
+
+
+\section{Turn Insulation Faults}
+\label{sec:turn_insulation_faults}
+
+Short-circuit faults form 26\% of the faults occurring in \acrshort{ims}, as stated in Table \ref{tab:failure_distribution_drilldown}. By short-circuits, we are counting the turn insulation and ground insulation faults categories.
+It has been reported that most short-circuit faults begin as interturn faults ~\cite{Bonnett1992}, which occur due to insulation failures but develop into more serious faults very quickly.
+Insulation failures are attributed to different reasons, with the primary reason being excessive thermal stresses.Other reasons for insulation failure include voltage stresses, aging, vibrations, or mechanical handling during assembly.
+
+Interturn faults are faults that happen in between turns of a winding, as shown in figure \ref{fig:insulation_faults}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth ]{insulation_Faults}
+	\caption{Types of insulation faults. Source: http://www.openelectrical.org/wiki/images/b/b9/Transformer\_Faults.png}
+	\label{fig:insulation_faults}
+\end{figure}
+
+Since the current now have a shorter circuit, the consequence of this fault is that the \acrfull{mmf} will decrease, since now it has less turns. Further, the current in the shorted turns produces also an \acrshort{mmf} which opposes against the main \acrshort{mmf} generated by the phase windings.
+
+
+If not timely detected, the fault progressively spreads and the fault current increases, increasing as well the thermal stress in its surroundings. The small inter-turn short-circuit can degenerate into a catastrophic interwinding (or phase-to-phase) short-circuit, or even in an earth (or phase-to-ground) short-circuit (also shown in figure \ref{fig:insulation_faults}). The earth fault is referred in the table \ref{tab:failure_distribution_drilldown} as grounding insulation.
+
+This processes develops rather quickly and appropriated measures must be taken to contain the fault.

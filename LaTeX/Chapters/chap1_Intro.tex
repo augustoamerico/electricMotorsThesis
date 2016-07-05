@@ -15,35 +15,33 @@
 \chapter{Introduction}  
 \label{cha:introduction} 
 
-This is the introductory chapter of this dissertation. The reader will be presented the context in which this work is included, as well as the motivation that lead to the development of this thesis in section \ref{sec:motivation}. Section \ref{sec:problem} will describe the problem this thesis is approaching and disclose its main goals. Furthermore, section \ref{sec:proposed_approach} will present the proposed approach, following the contributions of this thesis in section \ref{sec:contributions}. At last, section \ref{sec:outline} presents the remaining chapters of this dissertation.
+This is the introductory chapter of this dissertation. The reader will be presented the context of this work, as well as the motivation that lead to the development of this thesis in section \ref{sec:motivation}. Section \ref{sec:problem} will describe the problem this thesis is approaching and disclose its main goals. Furthermore, section \ref{sec:proposed_approach} will present the proposed approach, following the contributions of this thesis in section \ref{sec:contributions}. At last, section \ref{sec:outline} presents the remaining chapters of this dissertation.
 
 \section{Context and Motivation} % (fold)
 \label{sec:motivation}
 
-\todo[inline]{ordem de grandeza dos custos de: inicialização, exploração e manutenção}
-
 \Acrfullpl{em} are a great majority of industrial equipments. They are electrical machines that convert electrical energy into mechanical energy and they can be found in applications as diverse as industrial fans, blowers, pumps, compressors, conveyors, lifts, households appliances, power tools, etc. 
-These motors are integrated in \acrfull{emfs}, which are also composed by a power supply, electric controller, mechanical transmitter and a load. 
-In terms of electrical energy consumed, \acrlongpl{em} are responsible for the consumption of 30-40\% of that energy word-wide, 50-60\% of that energy in Developed Countries and 70-75\% of that energy in European Union ~\cite{Ferreira1} - making them one of the most important types of electrical loads. 
-Therefore, even small increases in the efficiency of \acrshort{emfs} will have a very significant impact in the reduction of energy consumption.
+These motors are the central component of \acrfull{emfs}, which are also composed by a power supply, electric controller, mechanical transmitter and a load. 
+In terms of electrical energy consumed, \acrlongpl{em} are responsible for the consumption of 30-40\% of energy word-wide, whereas in Developed Countries that value can reach 70-75\% ~\cite{Ferreira1} - making them one of the most important types of electrical loads. 
+Therefore, even small increases in the efficiency of \acrshort{em} will have a very significant impact in the reduction of energy consumption.
 
 
-Looking to the landscape of \acrlong{em} types in the Industry, the most used is the \acrfull{ims} due to its relative low cost, good efficiency and high availability - representing about 85-90\% of the \acrlong{em} installed in the industry~\cite{Ferreira1}. 
+Looking to the landscape of \acrlong{em} types in the Industry, the most used kind is the \acrfull{ims} due to its relative low cost, good efficiency and high availability - representing about 85-90\% of the \acrlong{em} installed in the industry~\cite{Ferreira1}. 
 These motors have a life expectancy of 12 to 20 years, in which they are repaired typically 2 to 4 times. Moreover, they consume energy in such a way that its energy consumption can cost up to 200 times their startup cost - being this energy consumption the exploration cost of an \acrlong{em}.
 Both startup cost and exploration cost are part of the \acrfull{lcc}, being the maintenance cost and the exploration cost the most expensive ones in the \acrshort{lcc} ~\cite{Ferreira1} (this subject is further discussed in section \ref{sec:Three_phase_induction_motors_maintenance_and_lyfe_cycle}). One aspect that is related to both costs is the quality of the maintenance, which is directly related to the motor's efficiency and availability. 
 
 Although the probability of breakdowns of \acrlong{em} is very low (discussed in section \ref{subsec:motor_failures}), there are constant concerns with high availability and reliability of the motors.
-In the production sector, if an \acrlong{em} fails unexpectedly, not only is that failure a cost, it can also provoke another failure elsewhere in the  \acrshort{emfs} - or in the systems that depends of its mechanical work - and it can also mean that the whole production line will be stopped. The costs associated to these unexpected failures are called the outage costs. Then again, one aspect that can minimize these occurrences is the quality of the maintenance. Therefore, the investment in maintenance practices that improve the efficiency and availability of \acrlong{em} is very attractive to the Industry.
+In the production sector, if an \acrlong{em} fails unexpectedly, not only is that failure a cost, it can also provoke another failure elsewhere in the  \acrshort{emfs} - or in the systems that depends of its mechanical work - and it can also mean that the whole production line may be stopped. The costs associated to these unexpected failures are called the outage costs. Then again, one aspect that can minimize these occurrences is the quality of the maintenance. Therefore, the investment in maintenance practices that improve the efficiency and availability of \acrlong{em} is very attractive to the Industry.
 
 There are maintenance practices that allow the improvement of the efficiency and availability of \acrlongpl{em}, like preventive maintenance and predictive maintenance. 
 Predictive Maintenance is a type of maintenance whose goal is to provide timely malfunction signals of the motors' status, minimizing the probability of an outage.  
-On the other hand, if the malfunctions are detected in an early stage then the repair actions tend to be less costly, not only because it is possible to timely plan the repair, as well as the malfunction tend to stay contained to its original location, not spreading to other areas of the motor.
+On the other hand, if the malfunctions are detected in an early stage then the repair actions tend to be less costly, not only because it is possible to timely plan the repair, as well as the malfunction tend to stay contained to its original location, not spreading to other parts of the motor.
 
 
 In the datification era in which we live and given the acceptance of \acrfull{iot} by the industries, there is the possibility to have a solution that relies on a proper trained model that uses the online data provided by sensors to provide insights and answers. 
-With an infrastructure of this nature, it would be possible not only to predict failures (within an confidence interval) as well as give real time insights of the \acrlong{em}' status. With this insights and predicted failures, it would led to an improvement of efficiency and availability, reduction in exploration costs, reduction in maintenance costs and a greater security in the decision-making process for maintenance.
+With an infrastructure of this nature, it would be possible not only to predict failures (within an confidence interval) as well as give real time insights of the \acrlongpl{em}' status. With this insights and predicted failures, it would led to an improvement of efficiency and availability, reduction in exploration costs, reduction in maintenance costs and a greater security in the decision-making process for maintenance.
 
-In this context, Altran has a project where the main objective is to build an assessment application for electric motors, providing insights as well as failure predictions. For this project, it is expected that Altran can arrange a partnership with Optisigma. This partnership is important since Optisigma has a device that can monitor \acrlong{em} and provide a set of useful real-time data to apply methods of \acrfull{esa}, which they have installed in several factories (pilot stage) - having data of these motors. Furthermore, with this partnership, it will be possible to mount an experimental test bench in which the faults can be induced so that several failures patterns can be studied. 
+In this context, Altran company has a project where the main objective is to build an assessment application for electric motors, providing insights as well as failure predictions. For this project, a partnership between Altran and Optisigma is in progress. This partnership is important since Optisigma has a device that can monitor \acrlong{em} and provide a set of useful real-time data to apply methods of \acrfull{esa}. They have already installed the device in several factories, which are already collecting online data. Furthermore, with this partnership, it will be possible to mount an experimental test bench in which the faults can be induced so that several failures patterns can be studied. 
 
 Due to economical and practical reasons, the low power \acrlongpl{ims} are the target motor category, with motors having 400V, 4 poles, 50Hz - which are the most used.
 
@@ -62,28 +60,29 @@ For purposes of this dissertation's work, a specific set of problems will be add
 \section{Problem} % (fold)
 \label{sec:problem}
 
-As stated in section \ref{subsec:motor_failures}, bearing faults account for most of the faults in an \acrlong{em}. These faults are commonly addressed by the installation of specific sensors for vibration analysis or even noise, and the use of stator current presents some difficulties with diagnosing bearing faults when using current analysis ~\cite{Riera-Guasp2015}.  Given the reported difficulties and given the requirement of \Acrshort{esa} techniques for this dissertation, this set of faults was discarded from the subset of problems to address.
+%As stated in section \ref{subsec:motor_failures}, bearing faults account for most of the faults in an \acrlong{em}. These faults are commonly addressed by the installation of specific sensors for vibration analysis or even noise, and the use of stator current presents some difficulties with diagnosing bearing faults when using current analysis ~\cite{Riera-Guasp2015}.  Given the reported difficulties and given the requirement of \Acrshort{esa} techniques for this dissertation, this set of faults was discarded from the subset of problems to address.
 
-The next greater source of faults are the stator winding short-circuits (referred in section \ref{subsec:motor_failures} as turn insulation and grounding insulation). These faults can form 26\% of the faults occurring in electrical machines (refereed in page \pageref{tab:failure_distribution_drilldown} table \ref{tab:failure_distribution_drilldown}), and in small machines can go up to 90\% ~\cite{Riera-Guasp2015}. These faults are typically the final result of the winding insulation's aging. An aged winding can locally fail due to a small stress, generating an interturn short-circuit - thus permitting fault current to circulate through the short-circuited turns. This fault creates a thermal effect that leads to a progressive degradation of the affected turns' insulation and its neighboring turns. These events' course lead to a progressive spread of the fault, increasing fault's current and even to an insulation fault of another phase. The insulation fault on a phase can lead to a phase-to-phase or phase-to-ground failure ~\cite{Riera-Guasp2015}. These kind of failures demand for timely appropriated measures that must be detected very quickly for any practical use, when the fault current remains low or before the conventional protection systems act (overcurrent or differential relays) ~\cite{Riera-Guasp2015}.
+One major source of faults are the stator winding short-circuits (referred in section \ref{subsec:motor_failures} as turn insulation and grounding insulation). These faults can form 26\% of the faults occurring in electrical machines (refereed in page \pageref{tab:failure_distribution_drilldown} table \ref{tab:failure_distribution_drilldown}), and in small machines can go up to 90\% ~\cite{Riera-Guasp2015}. These faults are typically the final result of the winding insulation's aging. An aged winding can locally fail due to a small stress, generating an interturn short-circuit - thus permitting fault current to circulate through the short-circuited turns. This fault creates a thermal effect that leads to a progressive degradation of the affected turns' insulation and its neighboring turns. These events' course lead to a progressive spread of the fault, increasing fault's current and even to an insulation fault of another phase. The insulation fault on a phase can lead to a phase-to-phase or phase-to-ground failure ~\cite{Riera-Guasp2015}. These kind of failures demand for timely appropriated measures that must be detected very quickly for any practical use, when the fault current remains low or before the conventional protection systems act (overcurrent or differential relays) ~\cite{Riera-Guasp2015}.
 
-For the presented reasons, the problem this dissertation proposes to solve is the timely detection of turn insulation faults in \acrlongpl{ims} using the stator's current signature.
+The selected failure is not the main source of problems but is still one of the most frequent failures and is one that must be early detected. The causes of motor failures is explained in section \ref{subsec:motor_failures}.
 
 
+For the presented reasons, the problem this dissertation proposes to address is the timely detection of turn insulation faults in \acrlongpl{ims} using the stator's current signature.
 
 
 
 \section{Proposed Approach} % (fold)
 \label{sec:proposed_approach}
 
+Regarding turn insulation failures, there are a set of works where \Acrshort{esa} techniques are used with other conventional techniques to detect short-circuited faults ~\cite{Cheng2011, Joksimovic2013, Cruz2001, Cabanas2013, Gandhi2011, Kia2013, M.a2014, Bouzid2013, Bakhri2012}, and another set of works that uses machine learning to detect short-circuited as well as other faults  ~\cite{Ourici2012, Toma2011, Wolkiewicz2013, Patel2016, Jagadanand2015}.
+
 This dissertation will follow the \acrlong{crispdm} methodology (discussed in section \ref{sec:crispdm}), where the first phase of this dissertation was the study of three phase induction motors and related problems, so that one of them could be chosen and further study. 
 
-Regarding this kind of failures, there are a set of works where \Acrshort{esa} techniques are used with other conventional techniques to detect short-circuited faults ~\cite{Cheng2011} ~\cite{Joksimovic2013} ~\cite{Cruz2001} ~\cite{Cabanas2013} ~\cite{Gandhi2011} ~\cite{Kia2013} ~\cite{M.a2014} ~\cite{Bouzid2013} ~\cite{Bakhri2012}, and another set that uses machine learning to detect short-circuited as well as other faults  ~\cite{Ourici2012} ~\cite{Toma2011} ~\cite{Wolkiewicz2013} ~\cite{Patel2016} ~\cite{Jagadanand2015}.
-
 The data understanding will be followed by an iterative study of signal processing, data stream methods and machine learning techniques, so that features can be derived and models can be compared.
+For the modeling, machine learning techniques will be studied and applied.
 After the evaluation phase of the most promising models, the process may be re-iterated. Still, a prototype is expected as a result of this dissertation.
 
 A complete description on the approach can be found in chapter \ref{cha:available_data}.
-
 
 
 % section electric_motors_basics (end)
@@ -93,7 +92,7 @@ A complete description on the approach can be found in chapter \ref{cha:availabl
 \section{Goals and Expected Contributions} % (fold)
 \label{sec:contributions}
 
-The goals of this dissertation are to search related work and techniques, implement and compare a set of machine learning techniques with the reported in literature and as a final result a prototype of an online  near real-time stream system to detect turn insulation faults is expected.
+The goal of this dissertation is to present a machine learning model which is capable of detect incipient turn insulation fault in real time. To do so, related works and techniques will be searched and several machine learning techniques will be implemented and compared. As a final result, a prototype of an online real-time stream system able to detect early turn insulation faults is expected.
 
 It is expected that these goals bring the following contributions:
 
@@ -102,9 +101,9 @@ It is expected that these goals bring the following contributions:
   \item 
   Develop a model that can detect early inter-turn short circuited faults, as well as other short-circuited faults, through the stator current
   \item 
-  Compare several transforms and signal processing techniques, being one of them the sparse fast Fourier transform  ~\cite{Indyk2014} - which was not found to be used in the literature in the dissertation's context but was found in another context showing that it is possible to reconstruct a sparse signal without sampling it at the Nyquist rate ~\cite{Hassanieh2014}
+  Compare several transforms and signal processing techniques, being one of them the sparse fast Fourier transform  ~\cite{Indyk2014,Hassanieh2014}
   \item 
-  Compare the quality of fault detection of several frequency resolution
+  Compare the quality of fault detection at several frequency resolutions
   \item 
   Identify the machine learning techniques which provides better results for online near real-time detection of turn insulation faults
 \end{itemize}

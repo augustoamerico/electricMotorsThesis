@@ -60,7 +60,7 @@
 	memoir={	            % See the 'memoir' documentation
     a4paper,            % the paper size/format
     11pt,               % 10pt, 11pt(*), 12pt
-    draft,              % draft, final  <= Replace 'draft' with 'final' in final version
+    final,              % draft, final  <= Replace 'draft' with 'final' in final version
   },
   media=screen,         % screen(*), paper
           % behavior to be defined in school options based in "\unlthesis@opt@media"
@@ -79,6 +79,12 @@
 %Biblatex bug
 \makeatletter
 \def\blx@maxline{77}
+\providecommand\add@text{}
+\newcommand\tagaddtext[1]{%
+  \gdef\add@text{#1\gdef\add@text{}}}% 
+\renewcommand\tagform@[1]{%
+  \maketag@@@{\llap{\add@text\quad}(\ignorespaces#1\unskip\@@italiccorr)}%
+}
 \makeatother
 
 %------------------------------------------------------------------
@@ -219,7 +225,7 @@
 % The other lists below may be commented and omitted.
 \addlisttofrontmatter{\listoffigures}	% The List of Figures. Comment to omit.
 \addlisttofrontmatter{\listoftables} 	% The List of Tables. Comment to omit.
-\addlisttofrontmatter{\lstlistoflistings}	% The List of Code Listings. Comment to omit.
+%\addlisttofrontmatter{\lstlistoflistings}	% The List of Code Listings. Comment to omit.
 \addlisttofrontmatter{\printnoidxglossaries}	% The Glossary and List of Acrnonyms
 
 
